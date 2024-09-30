@@ -1,0 +1,17 @@
+/* Сброс стилей для основных элементов */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, blockquote, pre, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* Можно добавить это правило для сброса внутренних отступов и уставить box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}

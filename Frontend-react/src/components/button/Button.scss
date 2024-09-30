@@ -1,0 +1,43 @@
+button{
+  border: none;
+  background-color: rgba(255,255,255,0);
+}
+
+.page__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border: none;
+  margin-right: 20px;
+  background-color: rgb(255, 196, 124);
+  transition: all 0.3s ease;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgba(255, 196, 124, 0.7);
+  }
+}
+
+.navigation__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+  }
+}
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  border-bottom: 2px solid black;
+}
