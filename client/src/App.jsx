@@ -1,14 +1,12 @@
-import { useState } from 'react'
 import Header from '/src/components/header/Header.jsx'
 import MainPage from './components/main/MainPage'
 import Footer from './components/footer/Footer'
+import './i18n'
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
-
   return (
     <>
-      <Header selectedCategory={selectedCategory} onChangeCategory={setSelectedCategory} />
+      <Header />
       <MainPage/>
       <Footer></Footer>
     </>

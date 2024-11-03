@@ -4,7 +4,8 @@
       "brand": "Dior",
       "name": "Sauvage",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "60 ml", "price": "105" },
         { "volume": "100 ml", "price": "135" },
         { "volume": "200 ml", "price": "175" }
@@ -15,7 +16,8 @@
       "brand": "Dior",
       "name": "Fahrenheit",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "90" },
         { "volume": "100 ml", "price": "125" },
         { "volume": "150 ml", "price": "160" }
@@ -26,7 +28,8 @@
       "brand": "Dior",
       "name": "J'adore",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "30 ml", "price": "85" },
         { "volume": "50 ml", "price": "120" },
         { "volume": "100 ml", "price": "160" }
@@ -37,7 +40,8 @@
       "brand": "Dior",
       "name": "Miss Dior",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "100" },
         { "volume": "100 ml", "price": "140" },
         { "volume": "150 ml", "price": "180" }
@@ -48,7 +52,8 @@
       "brand": "Dior",
       "name": "Fahrenheit Le Parfum",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "170" }
@@ -59,7 +64,8 @@
       "brand": "Chanel",
       "name": "Chanel No. 5",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "35 ml", "price": "105" },
         { "volume": "50 ml", "price": "140" },
         { "volume": "100 ml", "price": "200" }
@@ -70,7 +76,8 @@
       "brand": "Chanel",
       "name": "Coco Mademoiselle",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "120" },
         { "volume": "100 ml", "price": "170" },
         { "volume": "150 ml", "price": "210" }
@@ -81,7 +88,8 @@
       "brand": "Chanel",
       "name": "Chance Eau Tendre",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "115" },
         { "volume": "100 ml", "price": "160" },
         { "volume": "150 ml", "price": "200" }
@@ -92,7 +100,8 @@
       "brand": "Chanel",
       "name": "Bleu de Chanel",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "130" },
         { "volume": "100 ml", "price": "175" },
         { "volume": "150 ml", "price": "220" }
@@ -103,7 +112,8 @@
       "brand": "Chanel",
       "name": "Allure Homme",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "115" },
         { "volume": "100 ml", "price": "160" },
         { "volume": "150 ml", "price": "200" }
@@ -114,7 +124,8 @@
       "brand": "Armani",
       "name": "Acqua Di Gio",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "40 ml", "price": "90" },
         { "volume": "75 ml", "price": "120" },
         { "volume": "125 ml", "price": "160" }
@@ -125,7 +136,8 @@
       "brand": "Armani",
       "name": "Armani Code",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "170" }
@@ -136,7 +148,8 @@
       "brand": "Armani",
       "name": "Si",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "110" },
         { "volume": "100 ml", "price": "150" },
         { "volume": "150 ml", "price": "200" }
@@ -147,7 +160,8 @@
       "brand": "Armani",
       "name": "Emporio Armani She",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "100 ml", "price": "130" }
       ],
@@ -157,7 +171,8 @@
       "brand": "Armani",
       "name": "Armani Code Profumo",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "60 ml", "price": "120" },
         { "volume": "100 ml", "price": "155" },
         { "volume": "150 ml", "price": "200" }
@@ -168,7 +183,8 @@
       "brand": "Gucci",
       "name": "Guilty",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "90 ml", "price": "140" },
         { "volume": "150 ml", "price": "180" }
@@ -179,7 +195,8 @@
       "brand": "Gucci",
       "name": "Gucci Bloom",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "105" },
         { "volume": "100 ml", "price": "150" },
         { "volume": "150 ml", "price": "195" }
@@ -190,7 +207,8 @@
       "brand": "Gucci",
       "name": "Memoire d'une Odeur",
       "gender": "unisex",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "130" },
         { "volume": "100 ml", "price": "185" },
         { "volume": "150 ml", "price": "240" }
@@ -201,7 +219,8 @@
       "brand": "Gucci",
       "name": "Flora Gorgeous Gardenia",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "100" },
         { "volume": "100 ml", "price": "140" },
         { "volume": "150 ml", "price": "190" }
@@ -212,7 +231,8 @@
       "brand": "Gucci",
       "name": "Gucci Intense Oud",
       "gender": "unisex",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "30 ml", "price": "125" },
         { "volume": "50 ml", "price": "175" },
         { "volume": "100 ml", "price": "225" }
@@ -223,7 +243,8 @@
       "brand": "Yves Saint Laurent",
       "name": "Black Opium",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "30 ml", "price": "75" },
         { "volume": "50 ml", "price": "115" },
         { "volume": "90 ml", "price": "150" }
@@ -234,7 +255,8 @@
       "brand": "Yves Saint Laurent",
       "name": "La Nuit de L'Homme",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "60 ml", "price": "90" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "200 ml", "price": "175" }
@@ -245,7 +267,8 @@
       "brand": "Yves Saint Laurent",
       "name": "Mon Paris",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "75 ml", "price": "125" },
         { "volume": "100 ml", "price": "155" }
@@ -256,7 +279,8 @@
       "brand": "Yves Saint Laurent",
       "name": "L'Homme",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "40 ml", "price": "85" },
         { "volume": "60 ml", "price": "115" },
         { "volume": "100 ml", "price": "145" }
@@ -267,7 +291,8 @@
       "brand": "Yves Saint Laurent",
       "name": "Opium",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "105" },
         { "volume": "100 ml", "price": "145" },
         { "volume": "150 ml", "price": "190" }
@@ -278,7 +303,8 @@
       "brand": "Givenchy",
       "name": "Gentleman",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "90" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "170" }
@@ -289,7 +315,8 @@
       "brand": "Givenchy",
       "name": "Play",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "85" },
         { "volume": "100 ml", "price": "120" },
         { "volume": "150 ml", "price": "160" }
@@ -300,7 +327,8 @@
       "brand": "Givenchy",
       "name": "Dahlia Divin",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "105" },
         { "volume": "75 ml", "price": "140" },
         { "volume": "100 ml", "price": "175" }
@@ -311,7 +339,8 @@
       "brand": "Givenchy",
       "name": "Ange ou Démon",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "175" }
@@ -322,7 +351,8 @@
       "brand": "Givenchy",
       "name": "Irresistible",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "100" },
         { "volume": "100 ml", "price": "140" },
         { "volume": "150 ml", "price": "190" }
@@ -333,7 +363,8 @@
       "brand": "Burberry",
       "name": "Brit",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "85" },
         { "volume": "100 ml", "price": "115" },
         { "volume": "150 ml", "price": "145" }
@@ -344,7 +375,8 @@
       "brand": "Burberry",
       "name": "Her",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 3,
+      "volumesAndPrices": [
         { "volume": "30 ml", "price": "80" },
         { "volume": "50 ml", "price": "110" },
         { "volume": "100 ml", "price": "150" }
@@ -355,7 +387,8 @@
       "brand": "Burberry",
       "name": "Mr. Burberry",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "90" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "170" }
@@ -366,7 +399,8 @@
       "brand": "Burberry",
       "name": "London",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "85" },
         { "volume": "100 ml", "price": "120" },
         { "volume": "150 ml", "price": "155" }
@@ -377,7 +411,8 @@
       "brand": "Burberry",
       "name": "Touch",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "80" },
         { "volume": "100 ml", "price": "115" },
         { "volume": "150 ml", "price": "150" }
@@ -388,7 +423,8 @@
       "brand": "Calvin Klein",
       "name": "Euphoria",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "95" },
         { "volume": "100 ml", "price": "130" },
         { "volume": "150 ml", "price": "165" }
@@ -399,7 +435,8 @@
       "brand": "Calvin Klein",
       "name": "CK One",
       "gender": "unisex",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "70" },
         { "volume": "100 ml", "price": "95" },
         { "volume": "200 ml", "price": "130" }
@@ -410,7 +447,8 @@
       "brand": "Calvin Klein",
       "name": "Obsession",
       "gender": "men",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "80" },
         { "volume": "100 ml", "price": "115" },
         { "volume": "150 ml", "price": "150" }
@@ -421,7 +459,8 @@
       "brand": "Calvin Klein",
       "name": "CK Eternity",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "85" },
         { "volume": "100 ml", "price": "120" },
         { "volume": "150 ml", "price": "155" }
@@ -432,7 +471,8 @@
       "brand": "Calvin Klein",
       "name": "Eternity Now",
       "gender": "women",
-      "volumes": [
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
         { "volume": "50 ml", "price": "90" },
         { "volume": "100 ml", "price": "125" },
         { "volume": "150 ml", "price": "160" }

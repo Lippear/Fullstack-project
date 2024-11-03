@@ -8,20 +8,42 @@
   padding: 15px 0 15px;
 
   .search__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     width: 700px;
     position: relative;
 
+    .filter { 
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+
+      .filter__icon {
+        width: 70%;
+        height: 100%;
+      }
+    }
+
     .input__section {
+      background-color: white;
       width: 100%;
       display: flex;
-      border: 2px solid black;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       overflow: hidden;
 
-      .search__button {
+      .search__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 40px;
         width: 40px;
-        cursor: pointer;
       }
 
       .input__line {
@@ -37,6 +59,9 @@
       }
     }
     .hint__section {
+      position: absolute;
+      top:100%;
+      z-index: 100;
       width: 100%;
       margin-top: 5px;
       position: absolute;

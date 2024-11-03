@@ -7,6 +7,7 @@ const app = express()
 const port = 3500
 
 const filePath = path.join(__dirname, 'perfumes.json')
+
 app.use(
   cors({
     origin: 'http://localhost:5173',

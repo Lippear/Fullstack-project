@@ -2,10 +2,12 @@ import { useState } from 'react'
 import Button from '/src/components/button/Button.jsx'
 import { VscSearch } from 'react-icons/vsc'
 import './Search.scss'
+import { AiOutlineFilter } from 'react-icons/ai'
 
 export default function Search() {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [isFocused, setIsFocus] = useState(false)
   const searchLimit = 4
 
   function handleInputChange(event) {
@@ -45,10 +47,13 @@ export default function Search() {
   return (
     <section className="search__section">
       <div className="search__container">
-        <div className="input__section child">
-          <Button className="search__button" onClick={handleSearch}>
+        <Button className="filter">
+          <AiOutlineFilter className="filter__icon" />
+        </Button>
+        <div className="input__section child" tabIndex={0} onFocus={()=>setIsFocus(true)} onBlur={()=>setIsFocus(false)}>
+          <div className="search__icon" onClick={handleSearch}>
             <VscSearch />
-          </Button>
+          </div>
           <input
             type="text"
             id="textInput"
@@ -60,7 +65,7 @@ export default function Search() {
             onKeyPress={handleKeyPress}
           />
         </div>
-        {searchResults.length > 0 && (
+        {isFocused && searchResults.length > 0 && (
           <div className="hint__section hint__border">
             {searchResults.map((result, index) => (
               <div className="hint child" key={index}>
