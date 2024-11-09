@@ -24,7 +24,7 @@ export default function Header() {
         <Button className="functional__button cart">
           <IoCartOutline className="icon" />
         </Button>
-        <LanguageChanger className="functional__button"/>
+        <LanguageChanger/>
         <div className="line" />
         <Button className="account__button">
           <VscAccount className="icon" />
