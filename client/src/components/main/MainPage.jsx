@@ -2,13 +2,12 @@ import './MainPage.scss'
 import Search from './search/Search'
 import { useState, useEffect } from 'react'
 import Button from '/src/components/button/Button.jsx'
+import { useTranslation } from 'react-i18next'
 
 export default function MainPage() {
   const [freagnses, setFreganses] = useState([])
 
-  function SetFoundFreganses(foundFreganses) {
-    setFreganses(foundFreganses)
-  }
+  const {t} = useTranslation()
 
   useEffect(() => {
     fetch(`http://localhost:3500/api/fragrances`)
@@ -40,7 +39,7 @@ export default function MainPage() {
                 <span className="name">{perfume.name}</span>
                 <div className="price__addBtn__container">
                   <span className='price'>{perfume.volumesAndPrices[perfume.mainVolumeIndex-1].price} $</span>
-                  <Button className='addBtn'>Add to card</Button>
+                  <Button className='addBtn'>{t('add to cart')}</Button>
                 </div>
               </div>
             </Button>

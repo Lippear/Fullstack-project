@@ -3,12 +3,15 @@ import Button from '/src/components/button/Button.jsx'
 import { VscSearch } from 'react-icons/vsc'
 import './Search.scss'
 import { AiOutlineFilter } from 'react-icons/ai'
+import { useTranslation } from 'react-i18next'
 
 export default function Search() {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isFocused, setIsFocus] = useState(false)
   const searchLimit = 4
+
+  const {t}=useTranslation()
 
   function handleInputChange(event) {
     const value = event.target.value
@@ -58,7 +61,7 @@ export default function Search() {
             type="text"
             id="textInput"
             name="textInput"
-            placeholder="Search..."
+            placeholder={`${t('search')}...`}
             className="input__line"
             value={query}
             onChange={handleInputChange}

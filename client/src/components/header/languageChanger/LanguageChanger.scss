@@ -1,0 +1,23 @@
+.language__changer {
+    display: flex;
+    flex-direction: column;
+  .btn {
+    cursor: pointer;
+    margin: auto;
+    width: 70px;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    &:hover{
+    background-color: rgba(255,255,255,0.8);
+    }
+
+    .flag__icon {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
