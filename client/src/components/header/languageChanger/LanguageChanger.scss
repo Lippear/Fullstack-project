@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70px;
   .choose__section{
     position: absolute;
     top:70px;
@@ -13,14 +14,13 @@
 .btn {
   cursor: pointer;
   margin: auto;
-  width: 70px;
+  width: 100%;
   height: 45px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: white;
   transition: background-color 0.3s ease;
-  background-color: white;
   &:hover {
     background-color: rgb(192, 192, 192);
   }
@@ -30,3 +30,13 @@
     height: 50%;
   }
 }
+
+.arrow {
+  color: rgb(37,37,37);
+  transition: transform 0.5s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+

@@ -1,0 +1,30 @@
+.cart__modal {
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .cart__menu {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}

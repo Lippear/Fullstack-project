@@ -49,11 +49,11 @@ export default function Search() {
 
   return (
     <section className="search__section">
-      <div className="search__container">
+      <div className="search__container"tabIndex={0} onFocus={()=>setIsFocus(true)} onBlur={()=>setIsFocus(false)}>
         <Button className="filter">
           <AiOutlineFilter className="filter__icon" />
         </Button>
-        <div className="input__section child" tabIndex={0} onFocus={()=>setIsFocus(true)} onBlur={()=>setIsFocus(false)}>
+        <div className="input__section child" >
           <div className="search__icon" onClick={handleSearch}>
             <VscSearch />
           </div>

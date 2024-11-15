@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 20px;
 
   padding: 15px 0 15px;
 
@@ -61,7 +62,7 @@
     .hint__section {
       position: absolute;
       top:100%;
-      z-index: 100;
+      z-index: 1;
       width: 100%;
       margin-top: 5px;
       position: absolute;

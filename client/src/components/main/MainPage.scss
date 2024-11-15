@@ -25,12 +25,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     justify-content: space-around;
-    gap: 20px;
+    gap: 150px 50px;
 
     .freganse__button {
       padding: 0;
       display: flex;
-      margin: 30px 0;
       width: 200px;
       height: 300px;
       position: static;
@@ -45,7 +44,6 @@
         box-shadow: none;
         .freganse__info {
           position: absolute;
-          transform: scale(1.1);
           box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
         }
       }

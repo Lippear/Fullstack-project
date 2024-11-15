@@ -35,9 +35,8 @@ export default function LanguageChanger() {
   const [isChooseSectionOpen, setIsChooseSectionOpen] = useState(false)
 
   const menuRef = useRef(null)
-  useClickOutside(menuRef, () => {
-    setIsChooseSectionOpen(false)
-  })
+
+  useClickOutside(menuRef, () => setIsChooseSectionOpen(false))
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
@@ -45,15 +44,11 @@ export default function LanguageChanger() {
     setIsChooseSectionOpen(false)
   }
 
-  const changeUa = () => {
-    i18n.changeLanguage('ua')
-  }
-
   return (
     <div className={'language__changer'} ref={menuRef}>
       <Button className="btn" onClick={() => setIsChooseSectionOpen(!isChooseSectionOpen)}>
         <img src={flagOfLanguages.find((lang) => lang.code === currentLanguage)?.flag} className="flag__icon" />
-        <strong style={{ color: 'rgb(37, 37, 37)' }}>▼</strong>
+        <strong className={`arrow ${isChooseSectionOpen ? 'rotate' : ''}`}>▼</strong>
       </Button>
       {isChooseSectionOpen && (
         <div className="choose__section">

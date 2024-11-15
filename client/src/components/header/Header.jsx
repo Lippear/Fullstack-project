@@ -1,14 +1,20 @@
 import logo from '/public/logo.png'
-import './Header.scss'
 import Button from '/src/components/button/Button.jsx'
-import { VscAccount, VscSignIn } from 'react-icons/vsc'
+import { VscAccount } from 'react-icons/vsc'
 import { IoCartOutline } from 'react-icons/io5'
 import LanguageChanger from './languageChanger/LanguageChanger.jsx'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import { openCart } from '../../redux-toolkit/cart/cartSlise.js'
+import './Header.scss'
 
 export default function Header() {
   const {t} = useTranslation()
+  const dispatch = useDispatch()
 
+  const handleOpenCart=()=>{
+    dispatch(openCart())
+  }
 
   return (
     <header>
@@ -21,7 +27,7 @@ export default function Header() {
         <img src={logo} className="logo" alt="Logo"></img>
       </div>
       <div className="right__menu">
-        <Button className="functional__button cart">
+        <Button className="functional__button cart" onClick={handleOpenCart}>
           <IoCartOutline className="icon" />
         </Button>
         <LanguageChanger/>
