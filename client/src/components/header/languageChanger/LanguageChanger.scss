@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: center;
   width: 70px;
-  .choose__section{
+  .choose__section {
     position: absolute;
-    top:70px;
+    top: 70px;
     width: 70px;
     z-index: 1000000;
   }
@@ -32,11 +32,10 @@
 }
 
 .arrow {
-  color: rgb(37,37,37);
+  color: rgb(37, 37, 37);
   transition: transform 0.5s ease;
 }
 
 .rotate {
   transform: rotate(180deg);
 }
-

@@ -1,489 +1,521 @@
 {
   "perfumes": [
     {
-      "id":"1",
+      "id": "1",
       "brand": "Dior",
       "name": "Sauvage",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "60 ml", "price": "105" },
-        { "volume": "100 ml", "price": "135" },
-        { "volume": "200 ml", "price": "175" }
+        { "volume": "60", "price": "105" },
+        { "volume": "100", "price": "135" },
+        { "volume": "200", "price": "175" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1374516315/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTI1MDE0Nl8xLmpwZyJ9/dior-sauvage.webp"
     },
     {
-      "id":"2",
+      "id": "2",
       "brand": "Dior",
       "name": "Fahrenheit",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "90" },
-        { "volume": "100 ml", "price": "125" },
-        { "volume": "150 ml", "price": "160" }
+        { "volume": "50", "price": "90" },
+        { "volume": "100", "price": "125" },
+        { "volume": "150", "price": "160" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1484997385/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMDAxMjIxOV8xLmpwZyJ9/dior-fahrenheit.webp"
     },
     {
-      "id":"3",
+      "id": "3",
       "brand": "Dior",
       "name": "J'adore",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "30 ml", "price": "85" },
-        { "volume": "50 ml", "price": "120" },
-        { "volume": "100 ml", "price": "160" }
+        { "volume": "30", "price": "85" },
+        { "volume": "50", "price": "120" },
+        { "volume": "100", "price": "160" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1485254cd9/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTI5NjYzMl8xLmpwZyJ9/dior-j-adore.webp"
     },
     {
-      "id":"4",
+      "id": "4",
       "brand": "Dior",
       "name": "Miss Dior",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "100" },
-        { "volume": "100 ml", "price": "140" },
-        { "volume": "150 ml", "price": "180" }
+        { "volume": "50", "price": "100" },
+        { "volume": "100", "price": "140" },
+        { "volume": "150", "price": "180" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1507272096/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTQxOTM0NV8xLmpwZyJ9/dior-miss-dior.webp"
     },
     {
-      "id":"5",
+      "id": "5",
       "brand": "Dior",
       "name": "Fahrenheit Le Parfum",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "170" }
+        { "volume": "50", "price": "95" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "170" }
       ],
       "photo": "https://content2.rozetka.com.ua/goods/images/big/10833396.jpg"
     },
     {
-      "id":"6",
+      "id": "6",
       "brand": "Chanel",
       "name": "Chanel No. 5",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "35 ml", "price": "105" },
-        { "volume": "50 ml", "price": "140" },
-        { "volume": "100 ml", "price": "200" }
+        { "volume": "35", "price": "105" },
+        { "volume": "50", "price": "140" },
+        { "volume": "100", "price": "200" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/141248dce4/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvMVwvMzE0NTg5MTI1NTMwMF8xLmpwZyJ9/chanel-n-5.webp"
     },
     {
-      "id":"7",
+      "id": "7",
       "brand": "Chanel",
       "name": "Coco Mademoiselle",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "120" },
-        { "volume": "100 ml", "price": "170" },
-        { "volume": "150 ml", "price": "210" }
+        { "volume": "50", "price": "120" },
+        { "volume": "100", "price": "170" },
+        { "volume": "150", "price": "210" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1383727e30/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvMVwvMzE0NTg5MTE2NTIwM18xLmpwZyJ9/chanel-coco-mademoiselle.webp"
     },
     {
-      "id":"8",
+      "id": "8",
       "brand": "Chanel",
       "name": "Chance Eau Tendre",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "115" },
-        { "volume": "100 ml", "price": "160" },
-        { "volume": "150 ml", "price": "200" }
+        { "volume": "50", "price": "115" },
+        { "volume": "100", "price": "160" },
+        { "volume": "150", "price": "200" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/147524b0fa/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvMVwvMzE0NTg5MTI2MjYwNV8xLmpwZyJ9/chanel-chance-eau-tendre.webp"
     },
-    {"id":"9",
+    {
+      "id": "9",
       "brand": "Chanel",
       "name": "Bleu de Chanel",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "130" },
-        { "volume": "100 ml", "price": "175" },
-        { "volume": "150 ml", "price": "220" }
+        { "volume": "50", "price": "130" },
+        { "volume": "100", "price": "175" },
+        { "volume": "150", "price": "220" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/138229f390/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvMVwvMzE0NTg5MTA3MzYwN18xLmpwZyJ9/chanel-bleu-de-chanel.webp"
     },
-    {"id":"10",
+    {
+      "id": "10",
       "brand": "Chanel",
       "name": "Allure Homme",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "115" },
-        { "volume": "100 ml", "price": "160" },
-        { "volume": "150 ml", "price": "200" }
+        { "volume": "50", "price": "115" },
+        { "volume": "100", "price": "160" },
+        { "volume": "150", "price": "200" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1359380008/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvMVwvMzE0NTg5MTIxNDYwNF8xLmpwZyJ9/chanel-allure-homme.webp"
     },
-    {"id":"11",
+    {
+      "id": "11",
       "brand": "Armani",
       "name": "Acqua Di Gio",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "40 ml", "price": "90" },
-        { "volume": "75 ml", "price": "120" },
-        { "volume": "125 ml", "price": "160" }
+        { "volume": "40", "price": "90" },
+        { "volume": "75", "price": "120" },
+        { "volume": "125", "price": "160" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/22948427de/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvNlwvMzYxNDI3MzY2MjQ3NV8xLmpwZyJ9/armani-acqua-di-gio.webp"
     },
-    {"id":"12",
+    {
+      "id": "12",
       "brand": "Armani",
       "name": "Armani Code",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "170" }
+        { "volume": "50", "price": "95" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "170" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/14979257e6/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM2MDM3MjEwMDUyMl8xLmpwZyJ9/armani-code.webp"
     },
-    {"id":"13",
+    {
+      "id": "13",
       "brand": "Armani",
       "name": "Si",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "110" },
-        { "volume": "100 ml", "price": "150" },
-        { "volume": "150 ml", "price": "200" }
+        { "volume": "50", "price": "110" },
+        { "volume": "100", "price": "150" },
+        { "volume": "150", "price": "200" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/149881e85f/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvNlwvMzYwNTUyMTgxNjY1OF8xLmpwZyJ9/armani-si.webp"
     },
-    {"id":"14",
+    {
+      "id": "14",
       "brand": "Armani",
       "name": "Emporio Armani She",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "100 ml", "price": "130" }
+        { "volume": "50", "price": "95" },
+        { "volume": "100", "price": "130" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.64482.jpg"
     },
-    {"id":"15",
+    {
+      "id": "15",
       "brand": "Armani",
       "name": "Armani Code Profumo",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "60 ml", "price": "120" },
-        { "volume": "100 ml", "price": "155" },
-        { "volume": "150 ml", "price": "200" }
+        { "volume": "60", "price": "120" },
+        { "volume": "100", "price": "155" },
+        { "volume": "150", "price": "200" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/1492487038/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvNlwvMzYxNDI3MDU4MTY1Nl8xLmpwZyJ9/armani-code-profumo.webp"
     },
-    {"id":"16",
+    {
+      "id": "16",
       "brand": "Gucci",
       "name": "Guilty",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "90 ml", "price": "140" },
-        { "volume": "150 ml", "price": "180" }
+        { "volume": "50", "price": "95" },
+        { "volume": "90", "price": "140" },
+        { "volume": "150", "price": "180" }
       ],
       "photo": "https://pwa-api.eva.ua/img/512/512/resize/6/3/635152_1_1702040198.jpg"
     },
-    {"id":"17",
+    {
+      "id": "17",
       "brand": "Gucci",
       "name": "Gucci Bloom",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "105" },
-        { "volume": "100 ml", "price": "150" },
-        { "volume": "150 ml", "price": "195" }
+        { "volume": "50", "price": "105" },
+        { "volume": "100", "price": "150" },
+        { "volume": "150", "price": "195" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/142787bf7f/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvOFwvMFwvODAwNTYxMDQ4MTAwNV8xLmpwZyJ9/gucci-bloom.webp"
     },
-    {"id":"18",
+    {
+      "id": "18",
       "brand": "Gucci",
       "name": "Memoire d'une Odeur",
       "gender": "unisex",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "130" },
-        { "volume": "100 ml", "price": "185" },
-        { "volume": "150 ml", "price": "240" }
+        { "volume": "50", "price": "130" },
+        { "volume": "100", "price": "185" },
+        { "volume": "150", "price": "240" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/207716732b/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvNlwvMzYxNDIyNTMwNzU1M18xLmpwZyJ9/gucci-memoire-d-une-odeur.webp"
     },
-    {"id":"19",
+    {
+      "id": "19",
       "brand": "Gucci",
       "name": "Flora Gorgeous Gardenia",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "100" },
-        { "volume": "100 ml", "price": "140" },
-        { "volume": "150 ml", "price": "190" }
+        { "volume": "50", "price": "100" },
+        { "volume": "100", "price": "140" },
+        { "volume": "150", "price": "190" }
       ],
       "photo": "https://www.brocard.ua/media/catalog/product/2243230472/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvNlwvMzYxNjMwMjAyMjQ3Ml8xLmpwZyJ9/gucci-flora-gorgeous-gardenia.webp"
     },
-    {"id":"20",
+    {
+      "id": "20",
       "brand": "Gucci",
       "name": "Gucci Intense Oud",
       "gender": "unisex",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "30 ml", "price": "125" },
-        { "volume": "50 ml", "price": "175" },
-        { "volume": "100 ml", "price": "225" }
+        { "volume": "30", "price": "125" },
+        { "volume": "50", "price": "175" },
+        { "volume": "100", "price": "225" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.32743.jpg"
     },
-    {"id":"21",
+    {
+      "id": "21",
       "brand": "Yves Saint Laurent",
       "name": "Black Opium",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "30 ml", "price": "75" },
-        { "volume": "50 ml", "price": "115" },
-        { "volume": "90 ml", "price": "150" }
+        { "volume": "30", "price": "75" },
+        { "volume": "50", "price": "115" },
+        { "volume": "90", "price": "150" }
       ],
       "photo": "https://u.makeup.com.ua/n/nq/nqmnqp0ktvo3.jpg"
     },
-    {"id":"22",
+    {
+      "id": "22",
       "brand": "Yves Saint Laurent",
       "name": "La Nuit de L'Homme",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "60 ml", "price": "90" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "200 ml", "price": "175" }
+        { "volume": "60", "price": "90" },
+        { "volume": "100", "price": "130" },
+        { "volume": "200", "price": "175" }
       ],
       "photo": "https://images.prom.ua/4215023431_w600_h600_4215023431.jpg"
     },
-    {"id":"23",
+    {
+      "id": "23",
       "brand": "Yves Saint Laurent",
       "name": "Mon Paris",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "75 ml", "price": "125" },
-        { "volume": "100 ml", "price": "155" }
+        { "volume": "50", "price": "95" },
+        { "volume": "75", "price": "125" },
+        { "volume": "100", "price": "155" }
       ],
       "photo": "https://i5.walmartimages.com/asr/22af446e-8634-4753-b651-2d24f1695f5a_1.6eb151ed7457700d66b495596c14e244.jpeg"
     },
-    {"id":"24",
+    {
+      "id": "24",
       "brand": "Yves Saint Laurent",
       "name": "L'Homme",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "40 ml", "price": "85" },
-        { "volume": "60 ml", "price": "115" },
-        { "volume": "100 ml", "price": "145" }
+        { "volume": "40", "price": "85" },
+        { "volume": "60", "price": "115" },
+        { "volume": "100", "price": "145" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.734.jpg"
     },
-    {"id":"25",
+    {
+      "id": "25",
       "brand": "Yves Saint Laurent",
       "name": "Opium",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "105" },
-        { "volume": "100 ml", "price": "145" },
-        { "volume": "150 ml", "price": "190" }
+        { "volume": "50", "price": "105" },
+        { "volume": "100", "price": "145" },
+        { "volume": "150", "price": "190" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.64500.jpg"
     },
-    {"id":"26",
+    {
+      "id": "26",
       "brand": "Givenchy",
       "name": "Gentleman",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "90" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "170" }
+        { "volume": "50", "price": "90" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "170" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.48476.jpg"
     },
-    {"id":"27",
+    {
+      "id": "27",
       "brand": "Givenchy",
       "name": "Play",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "85" },
-        { "volume": "100 ml", "price": "120" },
-        { "volume": "150 ml", "price": "160" }
+        { "volume": "50", "price": "85" },
+        { "volume": "100", "price": "120" },
+        { "volume": "150", "price": "160" }
       ],
       "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1YPFE_OCIZeC2SbCVGJY7IUPDvJ3LhoYcqg&s"
     },
-    {"id":"28",
+    {
+      "id": "28",
       "brand": "Givenchy",
       "name": "Dahlia Divin",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "105" },
-        { "volume": "75 ml", "price": "140" },
-        { "volume": "100 ml", "price": "175" }
+        { "volume": "50", "price": "105" },
+        { "volume": "75", "price": "140" },
+        { "volume": "100", "price": "175" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.25972.jpg"
     },
-    {"id":"29",
+    {
+      "id": "29",
       "brand": "Givenchy",
       "name": "Ange ou Démon",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "175" }
+        { "volume": "50", "price": "95" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "175" }
       ],
       "photo": "https://u.makeup.com.ua/r/rn/rnv4mbwx2zh0.jpg"
     },
-    {"id":"30",
+    {
+      "id": "30",
       "brand": "Givenchy",
       "name": "Irresistible",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "100" },
-        { "volume": "100 ml", "price": "140" },
-        { "volume": "150 ml", "price": "190" }
+        { "volume": "50", "price": "100" },
+        { "volume": "100", "price": "140" },
+        { "volume": "150", "price": "190" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.60891.jpg"
     },
-    {"id":"31",
+    {
+      "id": "31",
       "brand": "Burberry",
       "name": "Brit",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "85" },
-        { "volume": "100 ml", "price": "115" },
-        { "volume": "150 ml", "price": "145" }
+        { "volume": "50", "price": "85" },
+        { "volume": "100", "price": "115" },
+        { "volume": "150", "price": "145" }
       ],
       "photo": "https://u.makeup.com.ua/x/xq/xqyhtcet3kfy.jpg"
     },
-    {"id":"32",
+    {
+      "id": "32",
       "brand": "Burberry",
       "name": "Her",
       "gender": "women",
-      "mainVolumeIndex": 3,
+      "mainVolumeIndex": 2,
       "volumesAndPrices": [
-        { "volume": "30 ml", "price": "80" },
-        { "volume": "50 ml", "price": "110" },
-        { "volume": "100 ml", "price": "150" }
+        { "volume": "30", "price": "80" },
+        { "volume": "50", "price": "110" },
+        { "volume": "100", "price": "150" }
       ],
       "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTqgFjezhLe9_af1QBjOYE6hup4rNb4OJ7ds2XgFdXUOSBRS63nmuvXNWZNV_3JTDZP19oetOAFZ5dMWbokh1P4xYUdg7wpxZhCV2744XyRRqAUbfVXn5wUElf0yHZxsv2cPDRk7L0&usqp=CAc"
     },
-    {"id":"33",
+    {
+      "id": "33",
       "brand": "Burberry",
       "name": "Mr. Burberry",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "90" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "170" }
+        { "volume": "50", "price": "90" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "170" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.43525.jpg"
     },
-    {"id":"34",
+    {
+      "id": "34",
       "brand": "Burberry",
       "name": "London",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "85" },
-        { "volume": "100 ml", "price": "120" },
-        { "volume": "150 ml", "price": "155" }
+        { "volume": "50", "price": "85" },
+        { "volume": "100", "price": "120" },
+        { "volume": "150", "price": "155" }
       ],
       "photo": "https://cdn.notinoimg.com/detail_main_lq/burberry/3614226905215_02-o/burberry-london-for-men___240103.jpg"
     },
-    {"id":"35",
+    {
+      "id": "35",
       "brand": "Burberry",
       "name": "Touch",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "80" },
-        { "volume": "100 ml", "price": "115" },
-        { "volume": "150 ml", "price": "150" }
+        { "volume": "50", "price": "80" },
+        { "volume": "100", "price": "115" },
+        { "volume": "150", "price": "150" }
       ],
       "photo": "https://u.makeup.com.ua/c/cw/cwwvgz77m701.jpg"
     },
-    {"id":"36",
+    {
+      "id": "36",
       "brand": "Calvin Klein",
       "name": "Euphoria",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "95" },
-        { "volume": "100 ml", "price": "130" },
-        { "volume": "150 ml", "price": "165" }
+        { "volume": "50", "price": "95" },
+        { "volume": "100", "price": "130" },
+        { "volume": "150", "price": "165" }
       ],
       "photo": "https://cdn.notinoimg.com/social/calvin-klein/cakephw_aedp30_03-o/calvin-klein-euphoria___130904.jpg"
     },
-    {"id":"37",
+    {
+      "id": "37",
       "brand": "Calvin Klein",
       "name": "CK One",
       "gender": "unisex",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "70" },
-        { "volume": "100 ml", "price": "95" },
-        { "volume": "200 ml", "price": "130" }
+        { "volume": "50", "price": "70" },
+        { "volume": "100", "price": "95" },
+        { "volume": "200", "price": "130" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.276.jpg"
     },
-    {"id":"38",
+    {
+      "id": "38",
       "brand": "Calvin Klein",
       "name": "Obsession",
       "gender": "men",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "80" },
-        { "volume": "100 ml", "price": "115" },
-        { "volume": "150 ml", "price": "150" }
+        { "volume": "50", "price": "80" },
+        { "volume": "100", "price": "115" },
+        { "volume": "150", "price": "150" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.248.jpg"
     },
-    {"id":"39",
+    {
+      "id": "39",
       "brand": "Calvin Klein",
       "name": "CK Eternity",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "85" },
-        { "volume": "100 ml", "price": "120" },
-        { "volume": "150 ml", "price": "155" }
+        { "volume": "50", "price": "85" },
+        { "volume": "100", "price": "120" },
+        { "volume": "150", "price": "155" }
       ],
       "photo": "https://u.makeup.com.ua/e/e9/e9c014qiiit7.jpg"
     },
-    {"id":"40",
+    {
+      "id": "40",
       "brand": "Calvin Klein",
       "name": "Eternity Now",
       "gender": "women",
-      "mainVolumeIndex": 2,
+      "mainVolumeIndex": 1,
       "volumesAndPrices": [
-        { "volume": "50 ml", "price": "90" },
-        { "volume": "100 ml", "price": "125" },
-        { "volume": "150 ml", "price": "160" }
+        { "volume": "50", "price": "90" },
+        { "volume": "100", "price": "125" },
+        { "volume": "150", "price": "160" }
       ],
       "photo": "https://fraguru.com/mdimg/perfume/375x500.31000.jpg"
     }

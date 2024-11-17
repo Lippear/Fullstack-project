@@ -5,23 +5,27 @@ import translationUa from './locales/ua.json'
 import translationDe from './locales/de.json'
 import translationFr from './locales/fr.json'
 import translationEs from './locales/es.json'
+import translationZh from './locales/zh.json'
 
 const resources = {
   en: {
-    translation: translationEn,
+    translation: translationEn
   },
   ua: {
-    translation: translationUa,
+    translation: translationUa
   },
   de: {
-    translation: translationDe,
+    translation: translationDe
   },
   fr: {
-    translation: translationFr,
+    translation: translationFr
   },
   es: {
-    translation: translationEs,
+    translation: translationEs
   },
+  zh: {
+    translation: translationZh
+  }
 }
 
 i18n.use(initReactI18next).init({
@@ -29,8 +33,8 @@ i18n.use(initReactI18next).init({
   lng: 'en',
   fallbackLng: 'en',
   interpolation: {
-    escapeValue: false,
-  },
+    escapeValue: false
+  }
 })
 
 export default i18n

@@ -8,6 +8,7 @@
   overflow: hidden;
   box-sizing: border-box;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  transition: overflow 0.3s ease;
 
   &:hover {
     overflow: visible;
@@ -18,7 +19,7 @@
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
       .choose__icon {
         position: absolute;
-        margin-left: 20px;
+        margin-left: 90px;
       }
     }
   }
@@ -28,10 +29,9 @@
     background-color: white;
     border-radius: 5px;
     width: 200px;
-    height: 420px;
+    height: 430px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s ease;
 
     .freganse__item__image {
       width: 200px;
@@ -67,19 +67,12 @@
       }
 
       .addBtn {
-        background-color: black;
-        color: white;
+        width: 100px;
         height: 100%;
-        cursor: pointer;
-        &:hover {
-          background-color: white;
-          color: black;
-          border: 1px solid black;
-        }
       }
     }
 
-    .select__volume_section {
+    .volume__changer {
       width: 120px;
       margin: 25px auto 0;
       display: flex;
@@ -88,9 +81,11 @@
       .volume__btn {
         width: 100%;
         height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        background-color: black;
-        color: white;
+        cursor: pointer;
 
         .volume__info {
           width: 70px;
@@ -98,11 +93,32 @@
         }
 
         &:hover {
-          background-color: white;
-          color: black;
           border: 1px solid black;
         }
       }
     }
   }
+}
+
+.items__btn {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
