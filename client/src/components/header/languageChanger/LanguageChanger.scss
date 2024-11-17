@@ -25,15 +25,18 @@
     background-color: rgb(192, 192, 192);
   }
 
+  .arrow {
+    color: rgb(37, 37, 37);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    transition: transform 0.5s ease;
+  }
+
   .flag__icon {
     width: 50%;
     height: 50%;
   }
-}
-
-.arrow {
-  color: rgb(37, 37, 37);
-  transition: transform 0.5s ease;
 }
 
 .rotate {

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { closeCart, selectIsCartOpen } from '../../redux-toolkit/cart/cartSlise'
 import { useClickOutside } from '../hooks/useClickOutside'
@@ -7,22 +7,28 @@ import './cartModal.scss'
 
 export default function CartModal() {
   const modalRef = useRef(null)
-  const cartMenuRef = useRef(null)
+  const contentRef = useRef(null)
   const isOpen = useSelector(selectIsCartOpen)
   const dispatch = useDispatch()
-
-  const openCartModal = () => {
-    document.body.classList.add('no-scroll')
-    modalRef.current?.classList.add('open')
-  }
+  const [isOrderProcesPageOpen, setIsOrderProcesPageOpen] = useState(false)
 
   const closeCartModal = () => {
     document.body.classList.remove('no-scroll')
-    modalRef.current?.classList.remove('open')
+    dispatch(closeCart())
+    modalRef.current.close()
   }
 
-  useClickOutside(cartMenuRef, () => {
-    dispatch(closeCart())
+  const openCartModal = () => {
+    document.body.classList.add('no-scroll')
+    modalRef.current.showModal()
+  }
+
+  useClickOutside(contentRef, () => {
+    if (!isOrderProcesPageOpen) {
+      closeCartModal()
+    } else {
+      setIsOrderProcesPageOpen(false)
+    }
   })
 
   useEffect(() => {
@@ -34,8 +40,28 @@ export default function CartModal() {
   }, [isOpen])
 
   return (
-    <div className="cart__modal" ref={modalRef}>
-      <div className="cart__menu" ref={cartMenuRef}></div>
-    </div>
+    <dialog ref={modalRef} className={`cart-modal ${isOpen ? 'open' : ''}`}>
+      <div className="cart__modal__content" ref={contentRef}>
+        {!isOrderProcesPageOpen && (
+          <div className="item__page">
+            <div className="item__editor">
+              <div className="modal__container"></div>
+            </div>
+            <div className="to__offer__info">
+              <div className="modal__container">
+                <strong>total prise: 500$</strong>
+                <Button
+                  className="proceed__to__checkout__btn"
+                  onClick={() => setIsOrderProcesPageOpen(true)}
+                >
+                  Proceed to Checkout
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+        {isOrderProcesPageOpen && <div className="order__proces__page"></div>}
+      </div>
+    </dialog>
   )
 }
