@@ -3,9 +3,8 @@ import cartReducer from './redux-toolkit/cart/cartSlise'
 
 const store = configureStore({
   reducer: {
-    cart: cartReducer,
-  },
+    cart: cartReducer
+  }
 })
-
 
 export default store
