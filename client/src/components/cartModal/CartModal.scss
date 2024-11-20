@@ -36,6 +36,8 @@
       .item__editor {
         width: 100%;
         height: 480px;
+        padding-top: 20px;
+        overflow-y: auto;
       }
       .to__offer__info {
         border-top: 2px solid black;
@@ -48,17 +50,11 @@
           .proceed__to__checkout__btn {
             width: 200px;
             height: 50px;
-            color: white;
-            background-color: black;
-            cursor: pointer;
-            transition:
-              background-color 0.2s ease,
-              color 0.2s ease;
-            &:hover {
-              color: black;
-              background-color: white;
-              border: 1px solid black;
-            }
+          }
+
+          .clear__cart__btn {
+            width: 100px;
+            height: 50px;
           }
         }
       }

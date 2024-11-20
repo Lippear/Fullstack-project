@@ -44,13 +44,15 @@ const cartSlice = createSlice({
     },
     removeItemFromCart: (state, action) => {
       const { id, volumeIndex: choosenItemIndex } = action.payload
-      const product = state.items[id]
 
+      const product = state.items[id]
       if (product && product.addedVolumes[choosenItemIndex]) {
         delete product.addedVolumes[choosenItemIndex]
         if (Object.keys(product.addedVolumes).length === 0) {
           delete state.items[id]
         }
+      } else {
+        console.error('Продукт или объём не найден!')
       }
     },
     clearCart: (state) => {
@@ -61,9 +63,7 @@ const cartSlice = createSlice({
 
 export const selectIsItemInCart = (state, id, volumeIndex) => {
   const product = state.cart.items[id]
-  return product && product.addedVolumes && product.addedVolumes[volumeIndex]
-    ? true
-    : false
+  return product && product.addedVolumes && product.addedVolumes[volumeIndex] ? true : false
 }
 
 export const selectUniqueItemsCount = (state) => {
@@ -81,14 +81,24 @@ export const selectUniqueItemsCount = (state) => {
   return uniqueItemsCount
 }
 
+export const selectCartTotalPrice = (state) => {
+  const items = state.cart.items
+  let totalPrice = 0
+
+  Object.keys(items).forEach((productId) => {
+    const product = items[productId]
+
+    Object.keys(product.addedVolumes).forEach((volumeIndex) => {
+      const volume = product.addedVolumes[volumeIndex]
+      totalPrice += volume.price * volume.count
+    })
+  })
+
+  return totalPrice
+}
+
 export const selectIsCartOpen = (state) => state.cart.isOpen
 export const selectCartItems = (state) => state.cart.items
 
-export const {
-  openCart,
-  closeCart,
-  addItemToCart,
-  removeItemFromCart,
-  clearCart
-} = cartSlice.actions
+export const { openCart, closeCart, addItemToCart, removeItemFromCart, clearCart } = cartSlice.actions
 export default cartSlice.reducer

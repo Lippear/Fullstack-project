@@ -1,22 +1,18 @@
-button{
+button {
   border: none;
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.page__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 40px;
-  border: none;
-  margin-right: 20px;
-  background-color: rgb(255, 196, 124);
-  transition: all 0.3s ease;
+.special__page__btn {
+  color: white;
+  background-color: black;
   cursor: pointer;
-
-
-  &:active {
-    background-color: rgba(255, 196, 124, 0.7);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  &:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
   }
 }

@@ -50,30 +50,16 @@ export default function LanguageChanger() {
 
   return (
     <div className={'language__changer'} ref={menuRef}>
-      <Button
-        className="btn"
-        onClick={() => setIsChooseSectionOpen(!isChooseSectionOpen)}
-      >
-        <img
-          src={
-            flagOfLanguages.find((lang) => lang.code === currentLanguage)?.flag
-          }
-          className="flag__icon"
-        />
-        <strong className={`arrow ${isChooseSectionOpen ? 'rotate' : ''}`}>
-          ▼
-        </strong>
+      <Button className="btn" onClick={() => setIsChooseSectionOpen(!isChooseSectionOpen)}>
+        <img src={flagOfLanguages.find((lang) => lang.code === currentLanguage)?.flag} className="flag__icon" />
+        <strong className={`arrow ${isChooseSectionOpen ? 'rotate' : ''}`}>▼</strong>
       </Button>
       {isChooseSectionOpen && (
         <div className="choose__section">
           {flagOfLanguages.map((language, index) => {
             if (!(language.code === currentLanguage)) {
               return (
-                <Button
-                  className="btn"
-                  onClick={() => changeLanguage(language.code)}
-                  key={index}
-                >
+                <Button className="btn" onClick={() => changeLanguage(language.code)} key={index}>
                   <img src={language.flag} className="flag__icon" />
                 </Button>
               )

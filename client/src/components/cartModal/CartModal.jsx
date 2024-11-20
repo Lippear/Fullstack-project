@@ -1,16 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { closeCart, selectIsCartOpen } from '../../redux-toolkit/cart/cartSlise'
+import { closeCart, selectIsCartOpen, selectCartItems, clearCart } from '../../redux-toolkit/cart/cartSlise'
 import { useClickOutside } from '../hooks/useClickOutside'
+import { calculateTotalCartPrice } from '../../servises/calculateTotalCartPrice'
 import Button from '/src/components/button/Button'
+import CartItem from './cartItem/CartItem'
 import './cartModal.scss'
 
 export default function CartModal() {
   const modalRef = useRef(null)
   const contentRef = useRef(null)
   const isOpen = useSelector(selectIsCartOpen)
+  const cartItems = useSelector(selectCartItems)
   const dispatch = useDispatch()
   const [isOrderProcesPageOpen, setIsOrderProcesPageOpen] = useState(false)
+
+  const totalPrice = calculateTotalCartPrice(cartItems)
 
   const closeCartModal = () => {
     document.body.classList.remove('no-scroll')
@@ -31,6 +36,8 @@ export default function CartModal() {
     }
   })
 
+  const makeCartClear = () => dispatch(clearCart())
+
   useEffect(() => {
     if (isOpen) {
       openCartModal()
@@ -45,15 +52,22 @@ export default function CartModal() {
         {!isOrderProcesPageOpen && (
           <div className="item__page">
             <div className="item__editor">
-              <div className="modal__container"></div>
+              <div className="modal__container">
+                {Object.keys(cartItems).map((itemId) => {
+                  const item = cartItems[itemId]
+                  return Object.keys(item.addedVolumes).map((volumeId) => {
+                    return <CartItem key={volumeId} item={item} itemId={itemId} volumeId={volumeId} />
+                  })
+                })}
+              </div>
             </div>
             <div className="to__offer__info">
               <div className="modal__container">
-                <strong>total prise: 500$</strong>
-                <Button
-                  className="proceed__to__checkout__btn"
-                  onClick={() => setIsOrderProcesPageOpen(true)}
-                >
+                <strong>Total price: {totalPrice}$</strong>
+                <Button className="special__page__btn clear__cart__btn" onClick={makeCartClear}>
+                  Clear cart
+                </Button>
+                <Button className="special__page__btn proceed__to__checkout__btn" onClick={() => setIsOrderProcesPageOpen(true)}>
                   Proceed to Checkout
                 </Button>
               </div>

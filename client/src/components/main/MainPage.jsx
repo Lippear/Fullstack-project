@@ -2,11 +2,10 @@ import './MainPage.scss'
 import Search from './search/Search'
 import { useState, useEffect } from 'react'
 import Button from '/src/components/button/Button.jsx'
-import FreganseItem from './freganseItem/freganseItem'
+import FreganseItem from './freganseItem/FreganseItem.jsx'
 
 export default function MainPage() {
   const [freagnses, setFreganses] = useState([])
-
 
   useEffect(() => {
     fetch(`http://localhost:3500/api/fragrances`)
@@ -28,7 +27,7 @@ export default function MainPage() {
   return (
     <section className="main__page">
       <div className="product__page">
-        <Search/>
+        <Search />
         <div className="freganses__container">
           {freagnses.map((perfume, index) => (
             <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>

@@ -7,9 +7,9 @@ import './i18n'
 function App() {
   return (
     <>
-      <CartModal/>
+      <CartModal />
       <Header />
-      <MainPage/>
+      <MainPage />
       <Footer></Footer>
     </>
   )
