@@ -4,5 +4,9 @@
   "search": "Search",
   "ml": "ml",
   "added": "Added",
-  "open cart": "Open cart"
+  "open cart": "Open cart",
+  "clear cart":"Clear cart",
+  "total":"total",
+  "total price":"Total price",
+  "proceed to checkout": "Proceed to Checkout"
 }

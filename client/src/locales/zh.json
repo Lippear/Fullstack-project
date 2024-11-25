@@ -4,5 +4,9 @@
   "search": "搜索",
   "ml": "毫升",
   "added": "已添加",
-  "open cart": "打开购物车"
+  "open cart": "打开购物车",
+  "clear cart": "清空购物车",
+  "total": "总计",
+  "total price": "总价",
+  "proceed to checkout": "前往结账"
 }

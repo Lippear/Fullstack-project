@@ -1,8 +1,12 @@
 {
   "sign in": "Anmelden",
-  "add to cart": "In den Warenkorb",
+  "add to cart": "In den Warenkorb legen",
   "search": "Suchen",
   "ml": "ml",
   "added": "Hinzugefügt",
-  "open cart": "Warenkorb öffnen"
+  "open cart": "Warenkorb öffnen",
+  "clear cart": "Warenkorb leeren",
+  "total": "Gesamt",
+  "total price": "Gesamtpreis",
+  "proceed to checkout": "Zur Kasse gehen"
 }

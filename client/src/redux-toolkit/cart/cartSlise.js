@@ -18,7 +18,6 @@ const cartSlice = createSlice({
     addItemToCart: (state, action) => {
       const { item, choosenItemIndex } = action.payload
       const { id, brand, name, photo, volumesAndPrices } = item
-
       const product = state.items[id]
 
       if (!product) {
@@ -26,9 +25,9 @@ const cartSlice = createSlice({
           brand,
           name,
           photo,
+          volumesAndPrices,
           addedVolumes: {
             [choosenItemIndex]: {
-              price: volumesAndPrices[choosenItemIndex].price,
               count: 1
             }
           }
@@ -36,7 +35,6 @@ const cartSlice = createSlice({
       } else {
         if (!product.addedVolumes[choosenItemIndex]) {
           product.addedVolumes[choosenItemIndex] = {
-            price: volumesAndPrices[choosenItemIndex].price,
             count: 1
           }
         }

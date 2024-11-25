@@ -1,7 +1,6 @@
 import './MainPage.scss'
 import Search from './search/Search'
 import { useState, useEffect } from 'react'
-import Button from '/src/components/button/Button.jsx'
 import FreganseItem from './freganseItem/FreganseItem.jsx'
 
 export default function MainPage() {
