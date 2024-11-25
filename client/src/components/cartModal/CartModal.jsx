@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { closeCart, selectIsCartOpen, selectCartItems, clearCart } from '../../redux-toolkit/cart/cartSlise'
 import { useClickOutside } from '../hooks/useClickOutside'
-import { calculateTotalCartPrice } from '../../servises/calculateTotalCartPrice'
+import { calculateTotalItemsPrice } from '../../servises/calculateTotalItemsPrice.js'
 import { useTranslation } from 'react-i18next'
 import Button from '/src/components/button/Button'
 import CartItem from './cartItem/CartItem'
@@ -17,7 +17,7 @@ export default function CartModal() {
   const [isOrderProcesPageOpen, setIsOrderProcesPageOpen] = useState(false)
   const { t } = useTranslation()
 
-  const totalPrice = calculateTotalCartPrice(cartItems)
+  const totalPrice = calculateTotalItemsPrice(cartItems)
 
   const closeCartModal = () => {
     document.body.classList.remove('no-scroll')
@@ -64,12 +64,14 @@ export default function CartModal() {
             </div>
             <div className="to__offer__info">
               <div className="modal__container">
-                <strong>{t("total price")}: {totalPrice}$</strong>
+                <strong>
+                  {t('total price')}: {totalPrice}$
+                </strong>
                 <Button className="special__page__btn clear__cart__btn" onClick={makeCartClear}>
-                  {t("clear cart")}
+                  {t('clear cart')}
                 </Button>
                 <Button className="special__page__btn proceed__to__checkout__btn" onClick={() => setIsOrderProcesPageOpen(true)}>
-                  {t("proceed to checkout")}
+                  {t('proceed to checkout')}
                 </Button>
               </div>
             </div>

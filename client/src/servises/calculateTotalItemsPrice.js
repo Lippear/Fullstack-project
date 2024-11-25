@@ -1,13 +1,13 @@
-// services/calculateTotalCartPrice.js
-export const calculateTotalCartPrice = (cartItems) => {
+export const calculateTotalItemsPrice = (cartItems) => {
   let totalPrice = 0
 
   Object.keys(cartItems).forEach((productId) => {
     const product = cartItems[productId]
     if (product && product.addedVolumes) {
       Object.keys(product.addedVolumes).forEach((volumeIndex) => {
-        const volume = product.addedVolumes[volumeIndex]
-        totalPrice += volume.price * volume.count
+        const count = product.addedVolumes[volumeIndex].count
+        const price = product.volumesAndPrices[volumeIndex].price
+        totalPrice += parseInt(price) * count
       })
     }
   })

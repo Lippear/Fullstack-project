@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { removeItemFromCart } from '../../../redux-toolkit/cart/cartSlise'
+import { removeItemFromCart,setItemCount } from '../../../redux-toolkit/cart/cartSlise'
 import { useTranslation } from 'react-i18next'
 import { FaTrash } from 'react-icons/fa'
+import { calculateTotalItemsPrice } from '../../../servises/calculateTotalItemsPrice.js'
 import Button from '../.././button/Button.jsx'
 import './CartItem.scss'
 
@@ -13,8 +14,16 @@ export default function CartItem({ item, itemId, volumeId }) {
   const dispatch = useDispatch()
   const [value, setValue] = useState(count)
   const inputRef = useRef(null)
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
+  const totalPrice = () => {
+    if(!(value==='')){
+      const itemPrice = parseInt(price)
+      const itemCount=parseInt(value)
+      return itemPrice*itemCount
+    }
+    else return ''
+  }
   const handleChange = (event) => {
     let inputValue = event.target.value
     if (inputValue === '0' && event.target.selectionStart === 1) {
@@ -29,6 +38,9 @@ export default function CartItem({ item, itemId, volumeId }) {
       inputValue = inputValue.slice(0, 2)
     }
     if (/^(-?[1-9]\d*|0)?$/.test(inputValue)) {
+      if(!(inputValue==='')){
+        dispatch(setItemCount({id:itemId,volumeIndex:volumeId, count:parseInt(inputValue)}))
+      }
       setValue(inputValue)
     }
   }
@@ -53,7 +65,9 @@ export default function CartItem({ item, itemId, volumeId }) {
       <div className="cart__item__info">
         <strong className="item__brand">{brand}</strong>
         <strong className="item__name">{name}</strong>
-        <span className="item__volume">{volume} {t('ml')}</span>
+        <span className="item__volume">
+          {volume} {t('ml')}
+        </span>
         <span className="item__price">{price}$</span>
       </div>
 
