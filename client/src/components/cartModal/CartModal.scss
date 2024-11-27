@@ -78,11 +78,16 @@
         }
       }
     }
-  }
 
-  .order__proces__page {
-    width: 100%;
-    height: 100%;
+    .order__proces__page {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 

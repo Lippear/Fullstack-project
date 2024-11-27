@@ -1,9 +1,8 @@
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { removeItemFromCart,setItemCount } from '../../../redux-toolkit/cart/cartSlise'
+import { removeItemFromCart, setItemCount } from '../../../redux-toolkit/cart/cartSlise'
 import { useTranslation } from 'react-i18next'
 import { FaTrash } from 'react-icons/fa'
-import { calculateTotalItemsPrice } from '../../../servises/calculateTotalItemsPrice.js'
 import Button from '../.././button/Button.jsx'
 import './CartItem.scss'
 
@@ -17,12 +16,11 @@ export default function CartItem({ item, itemId, volumeId }) {
   const { t } = useTranslation()
 
   const totalPrice = () => {
-    if(!(value==='')){
+    if (!(value === '')) {
       const itemPrice = parseInt(price)
-      const itemCount=parseInt(value)
-      return itemPrice*itemCount
-    }
-    else return ''
+      const itemCount = parseInt(value)
+      return `${t('total')} : ${itemPrice * itemCount}$`
+    } else return ''
   }
   const handleChange = (event) => {
     let inputValue = event.target.value
@@ -38,8 +36,8 @@ export default function CartItem({ item, itemId, volumeId }) {
       inputValue = inputValue.slice(0, 2)
     }
     if (/^(-?[1-9]\d*|0)?$/.test(inputValue)) {
-      if(!(inputValue==='')){
-        dispatch(setItemCount({id:itemId,volumeIndex:volumeId, count:parseInt(inputValue)}))
+      if (!(inputValue === '')) {
+        dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: parseInt(inputValue) }))
       }
       setValue(inputValue)
     }
@@ -47,12 +45,32 @@ export default function CartItem({ item, itemId, volumeId }) {
 
   const handleBlur = () => {
     if (value === '') {
+      dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: 1 }))
       setValue('1')
     }
   }
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       inputRef.current.blur()
+    }
+  }
+
+  const addItemClick = () => {
+    let newValue = parseInt(value) || 0
+    newValue += 1
+
+    setValue(newValue.toString())
+    dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
+  }
+
+  const removeItemClick = () => {
+    let newValue = parseInt(value) || 0
+    if (newValue > 1) {
+      newValue -= 1
+      setValue(newValue.toString())
+      dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
+    } else {
+      setValue('1')
     }
   }
 
@@ -72,7 +90,9 @@ export default function CartItem({ item, itemId, volumeId }) {
       </div>
 
       <div className="count__edittor">
-        <Button className="special__page__btn edit__count_btn">-</Button>
+        <Button className="special__page__btn edit__count_btn" onClick={removeItemClick}>
+          -
+        </Button>
         <input
           type="text"
           className="count__input"
@@ -82,8 +102,10 @@ export default function CartItem({ item, itemId, volumeId }) {
           onBlur={handleBlur}
           onKeyDown={handleKeyDown}
         />
-        <Button className="special__page__btn edit__count_btn">+</Button>
-        <strong>Total: 500$</strong>
+        <Button className="special__page__btn edit__count_btn" onClick={addItemClick}>
+          +
+        </Button>
+        <strong className="total">{totalPrice()}</strong>
       </div>
       <Button className="special__page__btn remove__item__btn" onClick={removeItem}>
         <FaTrash />

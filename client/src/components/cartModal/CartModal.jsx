@@ -47,6 +47,7 @@ export default function CartModal() {
       closeCartModal()
     }
   }, [isOpen])
+
   return (
     <dialog ref={modalRef} className={`cart-modal ${isOpen ? 'open' : ''}`}>
       <div className="cart__modal__content" ref={contentRef}>
@@ -65,7 +66,7 @@ export default function CartModal() {
             <div className="to__offer__info">
               <div className="modal__container">
                 <strong>
-                  {t('total price')}: {totalPrice}$
+                  {t('total price')} : {totalPrice}$
                 </strong>
                 <Button className="special__page__btn clear__cart__btn" onClick={makeCartClear}>
                   {t('clear cart')}
