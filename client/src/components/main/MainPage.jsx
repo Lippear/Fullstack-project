@@ -26,7 +26,7 @@ export default function MainPage() {
   return (
     <section className="main__page">
       <div className="product__page">
-        <Search />
+        <Search setFreganses={setFreganses} />
         <div className="freganses__container">
           {freagnses.map((perfume, index) => (
             <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>
