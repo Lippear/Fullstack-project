@@ -34,11 +34,11 @@
     .input__section {
       display: flex;
       flex-direction: column;
+      align-items: center;
       width: 640px;
       display: flex;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
       position: relative;
-      
 
       .input__line {
         padding: 0 15px 0 35px;
@@ -49,6 +49,12 @@
         border: none;
         &:focus {
           outline: none;
+        }
+        &.imput__section__active {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       }
 
@@ -61,46 +67,48 @@
         left: 5px;
         color: rgb(0, 0, 0);
       }
-      &:focus-within {
-        overflow: visible;
-        .input__line {
-          border: none;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
-        }
-      }
 
       .hint__section {
         position: absolute;
         top: 100%;
         z-index: 1;
-        width: 100%;
+        width: 100.2%;
         position: absolute;
         background: white;
         border: 1px solid gray;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
 
-        .hint {
+        li {
           width: 100%;
           height: 40px;
-          display: flex;
-          position: relative;
-          align-items: center;
-          gap: 10px;
-          overflow: hidden;
-          cursor: pointer;
-          padding-left: 30px;
-
-          &:hover {
-            background-color: rgba(128, 128, 128, 0.2);
-          }
           .search__icon {
             position: absolute;
             top: 13px;
             height: 15px;
             width: 15px;
+          }
+        }
+        .hint {
+          display: flex;
+          position: relative;
+          align-items: center;
+          gap: 10px;
+          padding-left: 30px;
+        }
+
+        .hint__button {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          display: flex;
+          position: relative;
+          align-items: center;
+          gap: 10px;
+          padding-left: 30px;
+          &:hover {
+            background-color: rgba(128, 128, 128, 0.2);
           }
         }
       }

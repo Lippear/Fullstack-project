@@ -10,42 +10,52 @@ export default function Search({ setFreganses }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isImputSectiionActive, setIsImputSectionActive] = useState(false)
-  const [indexOfSelectedHintChild, setIndexSelectedHintChild] = useState(0)
+  const [indexOfSelectedHint, setIndexSelectedHint] = useState(0)
   const searchLimit = 4
   const imputSectionRef = useRef(null)
+
+  let hintCount = 0
 
   const { t } = useTranslation()
   useClickOutside(imputSectionRef, () => setIsImputSectionActive(false))
 
-  const handleInputChange = (event) => {
-    const value = event.target.value
-    setQuery(value)
-
+  const fetchSearchResults = (value) => {
     if (value.trim()) {
       fetch(`http://localhost:3500/api/fragrances?search=${value}`)
         .then((response) => {
-          if (!response.ok) {
-            throw new Error('случилась ошибка')
-          } else {
-            return response.json()
-          }
+          if (!response.ok) throw new Error('Error')
+          else return response.json()
         })
-        .then((data) => {
-          setSearchResults(data.perfumes)
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    } else {
-      setSearchResults([])
-    }
+        .then((data) => setSearchResults(data.perfumes))
+        .catch((error) => console.error(error))
+    } else setSearchResults([])
   }
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter' && query.trim()) {
-      setFreganses(searchResults)
-      setSearchResults([])
+    const { key } = event
+    if (key === 'ArrowDown') {
+      setQuery('1')
+    } else if (key === 'ArrowUp') {
+      setQuery('2')
+    } else if (key === 'Enter' && query.trim()) {
+      if (searchResults.length > 0 && indexOfSelectedHint === 0) {
+        setFreganses(searchResults)
+      }
+      if (indexOfSelectedHint > 0) {
+        setQuery(event.target.value)
+        fetchSearchResults(event.target.value)
+      }
+      setIsImputSectionActive(false)
+      const childElements = imputSectionRef.current.querySelectorAll('input,button')
+      childElements.forEach((element) => {
+        element.blur()
+      })
     }
+  }
+  const handleInput = (event) => {
+    console.log('11')
+    setQuery(event.target.value)
+    fetchSearchResults(event.target.value)
   }
 
   return (
@@ -61,26 +71,40 @@ export default function Search({ setFreganses }) {
             id="textInput"
             name="textInput"
             placeholder={`${t('search')}...`}
-            className="input__line"
+            className={`input__line ${isImputSectiionActive && 'imput__section__active'}`}
             value={query}
             onFocus={() => setIsImputSectionActive(true)}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
+            onInput={handleInput}
             autoComplete="off"
           />
-          {isImputSectiionActive && searchResults.length > 0 && (
+          {isImputSectiionActive > 0 && (
             <ul className="hint__section">
-              <li className="hint"> 
-                <VscSearch className="search__icon"/>
-                <strong>{query}</strong>
-              </li>
-              {searchResults.map((result, index) => (
-                <li className="hint" key={index}>
-                  <VscSearch className="search__icon" />
-                  <span className="brand__hint">{result.brand}</span>
-                  <span className="name__hint">{result.name}</span>
+              {!query.trim() && (
+                <li className="hint">
+                  <VscSearch className="search__icon" /> <p>Введите запрос для поиска</p>
                 </li>
-              ))}
+              )}
+              {searchResults.length === 0 && query.trim() && (
+                <li className="hint">
+                  <VscSearch className="search__icon" />
+                  <p>
+                    По запросу <strong>{query}</strong> ничего не найдено
+                  </p>
+                </li>
+              )}
+              {searchResults.map((result, index) => {
+                hintCount++
+                return (
+                  <li key={index}>
+                    <Button className="hint__button">
+                      <VscSearch className="search__icon" />
+                      <span className="brand__hint">{result.brand}</span>
+                      <span className="name__hint">{result.name}</span>
+                    </Button>
+                  </li>
+                )
+              })}
             </ul>
           )}
         </div>
