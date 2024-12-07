@@ -8,5 +8,8 @@
   "clear cart":"Clear cart",
   "total":"Total",
   "total price":"Total price",
-  "proceed to checkout": "Proceed to Checkout"
+  "proceed to checkout": "Proceed to Checkout",
+  "enter your search query": "Enter your search query",
+  "on request":"On request",
+  "nothing found":"nothing found"
 }

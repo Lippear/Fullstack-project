@@ -10,14 +10,14 @@ export default function Search({ setFreganses }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isImputSectiionActive, setIsImputSectionActive] = useState(false)
-  const [indexOfSelectedHint, setIndexSelectedHint] = useState(0)
-  const searchLimit = 4
-  const imputSectionRef = useRef(null)
+  const [indexOfSelectedHint, setIndexOfSelectedHint] = useState(0)
+  const inputSectionRef = useRef(null)
+  let hintCount = searchResults.length
 
-  let hintCount = 0
+  const searchLimit = 4
 
   const { t } = useTranslation()
-  useClickOutside(imputSectionRef, () => setIsImputSectionActive(false))
+  useClickOutside(inputSectionRef, () => setIsImputSectionActive(false))
 
   const fetchSearchResults = (value) => {
     if (value.trim()) {
@@ -34,9 +34,10 @@ export default function Search({ setFreganses }) {
   const handleKeyPress = (event) => {
     const { key } = event
     if (key === 'ArrowDown') {
-      setQuery('1')
+      console.log(indexOfSelectedHint, hintCount)
+      if (hintCount === indexOfSelectedHint) setIndexOfSelectedHint(0)
+      else setIndexOfSelectedHint((prev) => prev + 1)
     } else if (key === 'ArrowUp') {
-      setQuery('2')
     } else if (key === 'Enter' && query.trim()) {
       if (searchResults.length > 0 && indexOfSelectedHint === 0) {
         setFreganses(searchResults)
@@ -46,14 +47,13 @@ export default function Search({ setFreganses }) {
         fetchSearchResults(event.target.value)
       }
       setIsImputSectionActive(false)
-      const childElements = imputSectionRef.current.querySelectorAll('input,button')
+      const childElements = inputSectionRef.current.querySelectorAll('input,button')
       childElements.forEach((element) => {
         element.blur()
       })
     }
   }
   const handleInput = (event) => {
-    console.log('11')
     setQuery(event.target.value)
     fetchSearchResults(event.target.value)
   }
@@ -64,7 +64,7 @@ export default function Search({ setFreganses }) {
         <Button className="filter">
           <AiOutlineFilter className="filter__icon" />
         </Button>
-        <div className="input__section" ref={imputSectionRef}>
+        <div className="input__section" ref={inputSectionRef}>
           <VscSearch className="search__icon" />
           <input
             type="text"
@@ -72,24 +72,30 @@ export default function Search({ setFreganses }) {
             name="textInput"
             placeholder={`${t('search')}...`}
             className={`input__line ${isImputSectiionActive && 'imput__section__active'}`}
-            value={query}
             onFocus={() => setIsImputSectionActive(true)}
             onKeyDown={handleKeyPress}
             onInput={handleInput}
+            value={
+              // indexOfSelectedHint === 0
+              query
+              //: searchResults.length > 0
+              //? `${searchResults[indexOfSelectedHint - 1]?.brand} ${searchResults[indexOfSelectedHint - 1]?.name}`
+              //: ''
+            }
             autoComplete="off"
           />
           {isImputSectiionActive > 0 && (
             <ul className="hint__section">
               {!query.trim() && (
                 <li className="hint">
-                  <VscSearch className="search__icon" /> <p>Введите запрос для поиска</p>
+                  <VscSearch className="search__icon" /> <p>{t('enter your search query')}</p>
                 </li>
               )}
               {searchResults.length === 0 && query.trim() && (
                 <li className="hint">
                   <VscSearch className="search__icon" />
                   <p>
-                    По запросу <strong>{query}</strong> ничего не найдено
+                    {t('on request')} " <strong>{query}</strong> " {t('nothing found')}
                   </p>
                 </li>
               )}

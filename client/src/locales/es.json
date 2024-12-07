@@ -3,10 +3,13 @@
   "add to cart": "Agregar al carrito",
   "search": "Buscar",
   "ml": "ml",
-  "added": "Añadido",
+  "added": "Agregado",
   "open cart": "Abrir carrito",
   "clear cart": "Vaciar carrito",
   "total": "Total",
   "total price": "Precio total",
-  "proceed to checkout": "Proceder al pago"
+  "proceed to checkout": "Proceder al pago",
+  "enter your search query": "Ingrese su consulta de búsqueda",
+  "on request": "A pedido",
+  "nothing found": "no se encontró nada"
 }

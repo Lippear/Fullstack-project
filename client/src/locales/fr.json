@@ -8,5 +8,8 @@
   "clear cart": "Vider le panier",
   "total": "Total",
   "total price": "Prix total",
-  "proceed to checkout": "Passer à la caisse"
+  "proceed to checkout": "Passer à la caisse",
+  "enter your search query": "Entrez votre requête de recherche",
+  "on request": "Sur demande",
+  "nothing found": "rien trouvé"
 }

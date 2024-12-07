@@ -1,6 +1,6 @@
 {
   "sign in": "Anmelden",
-  "add to cart": "In den Warenkorb legen",
+  "add to cart": "In den Warenkorb",
   "search": "Suchen",
   "ml": "ml",
   "added": "Hinzugefügt",
@@ -8,5 +8,8 @@
   "clear cart": "Warenkorb leeren",
   "total": "Gesamt",
   "total price": "Gesamtpreis",
-  "proceed to checkout": "Zur Kasse gehen"
+  "proceed to checkout": "Zur Kasse",
+  "enter your search query": "Geben Sie Ihre Suchanfrage ein",
+  "on request": "Auf Anfrage",
+  "nothing found": "nichts gefunden"
 }

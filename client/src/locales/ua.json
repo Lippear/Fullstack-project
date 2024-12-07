@@ -6,7 +6,10 @@
   "added": "Додано",
   "open cart": "Відкрити кошик",
   "clear cart": "Очистити кошик",
-  "total": "Всього",
+  "total": "Разом",
   "total price": "Загальна ціна",
-  "proceed to checkout": "Перейти до оформлення"
+  "proceed to checkout": "Перейти до оплати",
+  "enter your search query": "Введіть ваш запит",
+  "on request": "На запит",
+  "nothing found": "нічого не знайдено"
 }

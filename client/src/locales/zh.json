@@ -8,5 +8,8 @@
   "clear cart": "清空购物车",
   "total": "总计",
   "total price": "总价",
-  "proceed to checkout": "前往结账"
+  "proceed to checkout": "前往结算",
+  "enter your search query": "输入您的搜索内容",
+  "on request": "应要求",
+  "nothing found": "未找到内容"
 }
