@@ -110,6 +110,20 @@
           &:hover {
             background-color: rgba(128, 128, 128, 0.2);
           }
+          &.selected__hint {
+            background-color: rgba(128, 128, 128, 0.2);
+          }
+
+          .selected__hint__line {
+            background-color: rgb(52, 52, 52);
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
         }
       }
     }
