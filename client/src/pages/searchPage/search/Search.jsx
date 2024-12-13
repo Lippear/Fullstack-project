@@ -1,10 +1,10 @@
-import { useState, useRef, useLayoutEffect } from 'react'
+import { useState, useRef } from 'react'
 import Button from '/src/components/button/Button.jsx'
 import { VscSearch } from 'react-icons/vsc'
 import './Search.scss'
 import { AiOutlineFilter } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
-import { useClickOutside } from '../../hooks/useClickOutside'
+import { useClickOutside } from '/src/components/hooks/useClickOutside'
 
 export default function Search({ setFreganses }) {
   const [query, setQuery] = useState('')
@@ -16,6 +16,7 @@ export default function Search({ setFreganses }) {
   let hintCount = searchResults.length
 
   const { t } = useTranslation()
+
   useClickOutside(inputSectionRef, () => {
     setQuery(inputRef.current.value)
     fetchSearchResults(inputRef.current.value, false)
@@ -54,7 +55,6 @@ export default function Search({ setFreganses }) {
         setFreganses(searchResults)
       }
       if (indexOfSelectedHint > 0) {
-        console.log(indexOfSelectedHint > 0)
         setIndexOfSelectedHint(0)
         setQuery(event.target.value)
         fetchSearchResults(event.target.value, true)
@@ -73,6 +73,13 @@ export default function Search({ setFreganses }) {
     fetchSearchResults(event.target.value, false)
   }
 
+  const clearInputLine = () => {
+    setIndexOfSelectedHint(0)
+    setQuery('')
+    fetchSearchResults('', false)
+    inputRef.current.focus()
+  }
+
   return (
     <section className="search__section">
       <div className="search__container">
@@ -82,7 +89,7 @@ export default function Search({ setFreganses }) {
         <div className="input__section" ref={inputSectionRef}>
           <VscSearch className="search__icon" />
           <input
-            type="search"
+            type="text"
             id="textInput"
             name="textInput"
             placeholder={`${t('search')}...`}
@@ -96,7 +103,12 @@ export default function Search({ setFreganses }) {
             autoComplete="off"
             ref={inputRef}
           />
-          {isInputSectiionActive > 0 && (
+          {isInputSectiionActive && query.trim().length > 0 && (
+            <Button className="clear__btn special__page__btn" onClick={clearInputLine}>
+              ✖
+            </Button>
+          )}
+          {isInputSectiionActive && (
             <ul className="hint__section">
               {!query.trim() && (
                 <li className="hint">

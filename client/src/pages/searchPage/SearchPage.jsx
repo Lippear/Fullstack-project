@@ -1,9 +1,9 @@
-import './MainPage.scss'
-import Search from './search/Search'
+import './SearchPage.scss'
+import Search from './search/Search.jsx'
 import { useState, useEffect } from 'react'
 import FreganseItem from './freganseItem/FreganseItem.jsx'
 
-export default function MainPage() {
+export default function SearchPage() {
   const [freagnses, setFreganses] = useState([])
 
   useEffect(() => {
@@ -24,15 +24,17 @@ export default function MainPage() {
   }, [])
 
   return (
-    <section className="main__page">
-      <div className="product__page">
-        <Search setFreganses={setFreganses} />
-        <div className="freganses__container">
-          {freagnses.map((perfume, index) => (
-            <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>
-          ))}
+    <>
+      <div className="search__page">
+        <div className="product__page">
+          <Search setFreganses={setFreganses} />
+          <div className="freganses__container">
+            {freagnses.map((perfume, index) => (
+              <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </>
   )
 }

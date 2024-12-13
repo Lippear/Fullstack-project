@@ -1,15 +1,17 @@
 {
   "sign in": "Увійти",
-  "add to cart": "Додати до кошика",
+  "add to cart": "Додати в кошик",
   "search": "Пошук",
   "ml": "мл",
   "added": "Додано",
   "open cart": "Відкрити кошик",
   "clear cart": "Очистити кошик",
-  "total": "Разом",
+  "total": "Загалом",
   "total price": "Загальна ціна",
-  "proceed to checkout": "Перейти до оплати",
+  "proceed to checkout": "Перейти до оформлення",
   "enter your search query": "Введіть ваш запит",
-  "on request": "На запит",
-  "nothing found": "нічого не знайдено"
+  "on request": "За запитом",
+  "nothing found": "Нічого не знайдено",
+  "slogan": "LIPPEAR - НАЙКРАЩИЙ ОНЛАЙН МАГАЗИН ПАРФУМІВ",
+  "find your fragrance": "Знайдіть свій аромат"
 }

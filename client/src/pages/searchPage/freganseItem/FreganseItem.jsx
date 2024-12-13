@@ -1,7 +1,7 @@
 import Button from '/src/components/Button/Button.jsx'
 import { useTranslation } from 'react-i18next'
 import { useState, useRef } from 'react'
-import { useClickOutside } from '../../hooks/useClickOutside'
+import { useClickOutside } from '/src/components/hooks/useClickOutside'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectIsItemInCart, addItemToCart, openCart } from '../../../redux-toolkit/cart/cartSlise'
 import './FreganseItem.scss'

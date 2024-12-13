@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: center;
   width: 70px;
+  position: relative;
   .choose__section {
     position: absolute;
-    top: 70px;
+    top: 45px;
     width: 70px;
     z-index: 1000000;
   }

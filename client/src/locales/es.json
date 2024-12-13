@@ -1,15 +1,17 @@
 {
   "sign in": "Iniciar sesión",
-  "add to cart": "Agregar al carrito",
+  "add to cart": "Añadir al carrito",
   "search": "Buscar",
   "ml": "ml",
-  "added": "Agregado",
+  "added": "Añadido",
   "open cart": "Abrir carrito",
   "clear cart": "Vaciar carrito",
   "total": "Total",
   "total price": "Precio total",
-  "proceed to checkout": "Proceder al pago",
-  "enter your search query": "Ingrese su consulta de búsqueda",
-  "on request": "A pedido",
-  "nothing found": "no se encontró nada"
+  "proceed to checkout": "Proceder a la compra",
+  "enter your search query": "Ingresa tu consulta de búsqueda",
+  "on request": "Bajo solicitud",
+  "nothing found": "Nada encontrado",
+  "slogan": "LIPPEAR - LA TIENDA DE PERFUMES EN LÍNEA DEFINITIVA",
+  "find your fragrance": "Encuentra tu fragancia"
 }

@@ -10,7 +10,6 @@
       "Burberry",
       "Calvin Klein"
     ],
-    "genders": ["men", "women", "unisex"],
-    "minMaxPrices": [50,250]
+    "genders": ["men", "women", "unisex"]
   }
 }

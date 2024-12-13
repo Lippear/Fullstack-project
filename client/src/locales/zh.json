@@ -1,6 +1,6 @@
 {
   "sign in": "登录",
-  "add to cart": "加入购物车",
+  "add to cart": "添加到购物车",
   "search": "搜索",
   "ml": "毫升",
   "added": "已添加",
@@ -8,8 +8,10 @@
   "clear cart": "清空购物车",
   "total": "总计",
   "total price": "总价",
-  "proceed to checkout": "前往结算",
-  "enter your search query": "输入您的搜索内容",
+  "proceed to checkout": "前往结账",
+  "enter your search query": "请输入您的搜索查询",
   "on request": "应要求",
-  "nothing found": "未找到内容"
+  "nothing found": "没有找到",
+  "slogan": "LIPPEAR - 终极在线香水店",
+  "find your fragrance": "找到您的香水"
 }
