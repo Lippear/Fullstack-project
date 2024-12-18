@@ -15,7 +15,7 @@ app.use(
 );
 
 app.get("/api/fragrances", (req, res) => {
-  const { brand, name, gender, search } = req.query;
+  const { queryBrands, queryGender, search } = req.query;
 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
@@ -40,43 +40,15 @@ app.get("/api/fragrances", (req, res) => {
           .every((searchWord) =>
             fullName.split(" ").some((word) => word.startsWith(searchWord))
           );
-
-      const matchesFilters =
-        (!brand || item.brand.toLowerCase().includes(brand.toLowerCase())) &&
-        (!name || item.name.toLowerCase().includes(name.toLowerCase())) &&
-        (!gender || item.gender.toLowerCase() === gender.toLowerCase());
-
-      return matchesSearch && matchesFilters;
+      return matchesSearch;
     });
 
     res.json({ perfumes: filteredParfums });
   });
 });
 
-app.get("/api/fragrances/:id", (req, res) => {
-  const { id } = req.params;
-
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: "Failed to read data file" });
-    }
-
-    let parsedData;
-    try {
-      parsedData = JSON.parse(data);
-    } catch (jsonErr) {
-      return res.status(500).json({ error: "Failed to parse data file" });
-    }
-    const perfume = parsedData.perfumes.find(
-      (item) => item.id === parseInt(id, 10)
-    );
-
-    if (!perfume) {
-      return res.status(404).json({ error: "Perfume not found" });
-    }
-
-    res.json({ perfume });
-  });
+app.get("/api/search", (req, res) => {
+  const { search } = req.query;
 });
 
 app.listen(port, () => {

@@ -9,7 +9,7 @@ export default function WelcomePage() {
   const { t } = useTranslation()
 
   const toStoreClick = () => {
-    navigate('/search')
+    navigate('/fragrances')
   }
 
   return (

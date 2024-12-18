@@ -5,13 +5,15 @@ import FreganseItem from './freganseItem/FreganseItem.jsx'
 
 export default function SearchPage() {
   const [freagnses, setFreganses] = useState([])
+  const [querySearch, setQuerySearch]=useState('')
 
   useEffect(() => {
+    const query = `?${querySearch.length>0&&`search=${querySearch}`}`
     fetch(`http://localhost:3500/api/fragrances`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Search error')
-        } else {
+        } else {  
           return response.json()
         }
       })

@@ -5,16 +5,21 @@ import './Search.scss'
 import { AiOutlineFilter } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 import { useClickOutside } from '/src/components/hooks/useClickOutside'
+import { useNavigate } from 'react-router-dom'
 
 export default function Search({ setFreganses }) {
-  const [query, setQuery] = useState('')
+  const [querySearchInput, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [isInputSectiionActive, setIsInputSectionActive] = useState(false)
+  const [isInputSectionActive, setIsInputSectionActive] = useState(false)
   const [indexOfSelectedHint, setIndexOfSelectedHint] = useState(0)
   const inputSectionRef = useRef(null)
+  const navigate = useNavigate()
   const inputRef = useRef(null)
   let hintCount = searchResults.length
 
+// http://localhost:5173/fragrances?search=Dior%20Sauvage
+
+  
   const { t } = useTranslation()
 
   useClickOutside(inputSectionRef, () => {
@@ -24,10 +29,15 @@ export default function Search({ setFreganses }) {
     setIsInputSectionActive(false)
   })
 
+  const navigateWitchQuery = (searchQueryInput) => {
+    navigate(`/fragrances?search=${searchQueryInput}`)
+  }
+
   const fetchSearchResults = (value, isSetToMain) => {
     if (value.trim()) {
       fetch(`http://localhost:3500/api/fragrances?search=${value}`)
         .then((response) => {
+          console.log(`http://localhost:3500/api/fragrances?search=${value}`)
           if (!response.ok) throw new Error('Error')
           else return response.json()
         })
@@ -50,14 +60,14 @@ export default function Search({ setFreganses }) {
       event.preventDefault()
       if (indexOfSelectedHint === 0) setIndexOfSelectedHint(hintCount)
       else setIndexOfSelectedHint((prev) => prev - 1)
-    } else if (key === 'Enter' && query.trim()) {
+    } else if (key === 'Enter' && querySearchInput.trim()) {
       if (searchResults.length > 0 && indexOfSelectedHint === 0) {
-        setFreganses(searchResults)
+       // setFreganses(searchResults)
       }
       if (indexOfSelectedHint > 0) {
         setIndexOfSelectedHint(0)
         setQuery(event.target.value)
-        fetchSearchResults(event.target.value, true)
+        //fetchSearchResults(event.target.value, true)
       }
       setIsInputSectionActive(false)
       const childElements = inputSectionRef.current.querySelectorAll('input,button')
@@ -65,6 +75,17 @@ export default function Search({ setFreganses }) {
         element.blur()
       })
     }
+  }
+
+  const makeHintQuery = (hintSearchQuery) => {
+    setIndexOfSelectedHint(0)
+    setQuery(hintSearchQuery)
+    fetchSearchResults(hintQuery, true)
+    setIsInputSectionActive(false)
+    const childElements = inputSectionRef.current.querySelectorAll('input,button')
+    childElements.forEach((element) => {
+      element.blur()
+    })
   }
 
   const handleInput = (event) => {
@@ -93,44 +114,45 @@ export default function Search({ setFreganses }) {
             id="textInput"
             name="textInput"
             placeholder={`${t('search')}...`}
-            className={`input__line ${isInputSectiionActive && 'imput__section__active'}`}
+            className={`input__line ${isInputSectionActive && 'imput__section__active'}`}
             onFocus={() => setIsInputSectionActive(true)}
             onKeyDown={handleKeyPress}
             onInput={handleInput}
             value={
-              indexOfSelectedHint === 0 ? query : `${searchResults[indexOfSelectedHint - 1].brand} ${searchResults[indexOfSelectedHint - 1].name}`
+              indexOfSelectedHint === 0
+                ? querySearchInput
+                : `${searchResults[indexOfSelectedHint - 1].brand} ${searchResults[indexOfSelectedHint - 1].name}`
             }
             autoComplete="off"
             ref={inputRef}
           />
-          {isInputSectiionActive && query.trim().length > 0 && (
+          {isInputSectionActive && querySearchInput.trim().length > 0 && (
             <Button className="clear__btn special__page__btn" onClick={clearInputLine}>
               ✖
             </Button>
           )}
-          {isInputSectiionActive && (
+          {isInputSectionActive && (
             <ul className="hint__section">
-              {!query.trim() && (
+              {!querySearchInput.trim() && (
                 <li className="hint">
                   <VscSearch className="search__icon" /> <p>{t('enter your search query')}</p>
                 </li>
               )}
-              {searchResults.length === 0 && query.trim() && (
+              {searchResults.length === 0 && querySearchInput.trim() && (
                 <li className="hint">
                   <VscSearch className="search__icon" />
                   <p>
-                    {t('on request')} " <strong>{query}</strong> " {t('nothing found')}
+                    {t('on request')} " <strong>{querySearchInput}</strong> " {t('nothing found')}
                   </p>
                 </li>
               )}
               {searchResults.map((result, index) => {
                 return (
                   <li key={index}>
-                    <Button className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`}>
+                    <Button className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`} onClick={() => makeHintQuery(result)}>
                       {index + 1 === indexOfSelectedHint && <div className="selected__hint__line"></div>}
                       <VscSearch className="search__icon" />
-                      <span className="brand__hint">{result.brand}</span>
-                      <span className="name__hint">{result.name}</span>
+                      <span>{result}</span>
                     </Button>
                   </li>
                 )

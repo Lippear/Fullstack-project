@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="welcome" replace />} />
         <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/fragrances" element={<SearchPage />} />
       </Routes>
       {location.pathname !== '/welcome' && <Footer />}
     </>
