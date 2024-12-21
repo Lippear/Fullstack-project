@@ -1,5 +1,5 @@
 import './SearchPage.scss'
-import Search from './search/Search.jsx'
+import Search from './queryParams/Search.jsx'
 import { useState, useEffect } from 'react'
 import FreganseItem from './freganseItem/FreganseItem.jsx'
 
@@ -8,7 +8,7 @@ export default function SearchPage() {
   const [querySearch, setQuerySearch]=useState('')
 
   useEffect(() => {
-    const query = `?${querySearch.length>0&&`search=${querySearch}`}`
+
     fetch(`http://localhost:3500/api/fragrances`)
       .then((response) => {
         if (!response.ok) {
@@ -29,7 +29,7 @@ export default function SearchPage() {
     <>
       <div className="search__page">
         <div className="product__page">
-          <Search setFreganses={setFreganses} />
+          <Search />
           <div className="freganses__container">
             {freagnses.map((perfume, index) => (
               <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>

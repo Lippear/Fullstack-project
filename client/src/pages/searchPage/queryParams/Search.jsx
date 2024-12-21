@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next'
 import { useClickOutside } from '/src/components/hooks/useClickOutside'
 import { useNavigate } from 'react-router-dom'
 
-export default function Search({ setFreganses }) {
-  const [querySearchInput, setQuery] = useState('')
+export default function Search() {
+  const [querySearchInput, setQuerySearchInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isInputSectionActive, setIsInputSectionActive] = useState(false)
   const [indexOfSelectedHint, setIndexOfSelectedHint] = useState(0)
@@ -16,88 +16,73 @@ export default function Search({ setFreganses }) {
   const navigate = useNavigate()
   const inputRef = useRef(null)
   let hintCount = searchResults.length
+  // http://localhost:5173/fragrances?search=Dior%20Sauvage
 
-// http://localhost:5173/fragrances?search=Dior%20Sauvage
-
-  
   const { t } = useTranslation()
 
   useClickOutside(inputSectionRef, () => {
-    setQuery(inputRef.current.value)
+    setQuerySearchInput(inputRef.current.value)
     fetchSearchResults(inputRef.current.value, false)
     setIndexOfSelectedHint(0)
     setIsInputSectionActive(false)
   })
 
   const navigateWitchQuery = (searchQueryInput) => {
-    navigate(`/fragrances?search=${searchQueryInput}`)
+    navigate(`/fragrances?search=${encodeURIComponent(searchQueryInput)}`)
   }
 
-  const fetchSearchResults = (value, isSetToMain) => {
+  const fetchSearchResults = (value) => {
     if (value.trim()) {
-      fetch(`http://localhost:3500/api/fragrances?search=${value}`)
+      fetch(`http://localhost:3500/api/searchQuery?search=${value}`)
         .then((response) => {
-          console.log(`http://localhost:3500/api/fragrances?search=${value}`)
           if (!response.ok) throw new Error('Error')
           else return response.json()
         })
         .then((data) => {
-          setSearchResults(data.perfumes)
-          if (isSetToMain) {
-            setFreganses(data.perfumes)
-          }
+          setSearchResults(data.searchResults)
         })
         .catch((error) => console.error(error))
     } else setSearchResults([])
   }
 
+  const makeQuery = (searchForQuery) => {
+    setIndexOfSelectedHint(0)
+    setQuerySearchInput(searchForQuery)
+    fetchSearchResults(searchForQuery)
+    setIsInputSectionActive(false)
+    navigateWitchQuery(searchForQuery)
+  }
+
   const handleKeyPress = (event) => {
     const { key } = event
     if (key === 'ArrowDown') {
-      if (hintCount === indexOfSelectedHint) setIndexOfSelectedHint(0)
-      else setIndexOfSelectedHint((prev) => prev + 1)
+      if (hintCount === indexOfSelectedHint) {
+        setIndexOfSelectedHint(0)
+      } else {
+        setIndexOfSelectedHint((prev) => prev + 1)
+      }
     } else if (key === 'ArrowUp') {
       event.preventDefault()
-      if (indexOfSelectedHint === 0) setIndexOfSelectedHint(hintCount)
-      else setIndexOfSelectedHint((prev) => prev - 1)
+      if (indexOfSelectedHint === 0) {
+        setIndexOfSelectedHint(hintCount)
+      } else {
+        setIndexOfSelectedHint((prev) => prev - 1)
+      }
     } else if (key === 'Enter' && querySearchInput.trim()) {
-      if (searchResults.length > 0 && indexOfSelectedHint === 0) {
-       // setFreganses(searchResults)
-      }
-      if (indexOfSelectedHint > 0) {
-        setIndexOfSelectedHint(0)
-        setQuery(event.target.value)
-        //fetchSearchResults(event.target.value, true)
-      }
-      setIsInputSectionActive(false)
-      const childElements = inputSectionRef.current.querySelectorAll('input,button')
-      childElements.forEach((element) => {
-        element.blur()
-      })
+      makeQuery(event.target.value)
     }
-  }
-
-  const makeHintQuery = (hintSearchQuery) => {
-    setIndexOfSelectedHint(0)
-    setQuery(hintSearchQuery)
-    fetchSearchResults(hintQuery, true)
-    setIsInputSectionActive(false)
-    const childElements = inputSectionRef.current.querySelectorAll('input,button')
-    childElements.forEach((element) => {
-      element.blur()
-    })
   }
 
   const handleInput = (event) => {
     setIndexOfSelectedHint(0)
-    setQuery(event.target.value)
-    fetchSearchResults(event.target.value, false)
+    setQuerySearchInput(event.target.value)
+    fetchSearchResults(event.target.value)
   }
 
   const clearInputLine = () => {
     setIndexOfSelectedHint(0)
-    setQuery('')
-    fetchSearchResults('', false)
+    setQuerySearchInput('')
+    fetchSearchResults('')
     inputRef.current.focus()
   }
 
@@ -118,15 +103,11 @@ export default function Search({ setFreganses }) {
             onFocus={() => setIsInputSectionActive(true)}
             onKeyDown={handleKeyPress}
             onInput={handleInput}
-            value={
-              indexOfSelectedHint === 0
-                ? querySearchInput
-                : `${searchResults[indexOfSelectedHint - 1].brand} ${searchResults[indexOfSelectedHint - 1].name}`
-            }
+            value={indexOfSelectedHint === 0 ? querySearchInput : `${searchResults[indexOfSelectedHint - 1]}`}
             autoComplete="off"
             ref={inputRef}
           />
-          {isInputSectionActive && querySearchInput.trim().length > 0 && (
+          {isInputSectionActive && querySearchInput.length > 0 && (
             <Button className="clear__btn special__page__btn" onClick={clearInputLine}>
               ✖
             </Button>
@@ -146,13 +127,19 @@ export default function Search({ setFreganses }) {
                   </p>
                 </li>
               )}
-              {searchResults.map((result, index) => {
+              {searchResults.map((searchResult, index) => {
                 return (
                   <li key={index}>
-                    <Button className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`} onClick={() => makeHintQuery(result)}>
+                    <Button
+                      className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`}
+                      onClick={() => {
+                        console.log(searchResult)
+                        makeQuery(searchResult)
+                      }}
+                    >
                       {index + 1 === indexOfSelectedHint && <div className="selected__hint__line"></div>}
                       <VscSearch className="search__icon" />
-                      <span>{result}</span>
+                      <span>{searchResult}</span>
                     </Button>
                   </li>
                 )
