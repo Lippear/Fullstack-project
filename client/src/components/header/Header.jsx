@@ -40,8 +40,8 @@ export default function Header() {
         <LanguageChanger />
         <div className="line" />
         <Button className="account__button">
-          <VscAccount className="icon" />
           <strong>{t('sign in')}</strong>
+          <VscAccount className="icon" />
         </Button>
       </div>
     </header>

@@ -2,100 +2,79 @@
   padding: 0;
   display: flex;
   width: 200px;
-  height: 300px;
-  position: static;
+  height: 430px; /* Высота должна быть общей для всего элемента */
   border-radius: 5px;
-  overflow: hidden;
+  overflow: visible; /* Убираем скрытие содержимого */
   box-sizing: border-box;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  transition: overflow 0.3s ease;
+  background-color: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Тень всегда активна */
+  transition: box-shadow 0.3s ease; /* Для плавного изменения тени */
+  flex-direction: column; /* Добавлено для правильного выравнивания внутренних элементов */
+  
+  .freganse__item__image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+  }
 
-  &:hover {
-    overflow: visible;
-    position: relative;
-    box-shadow: none;
-    .freganse__info {
-      position: absolute;
-      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-      .choose__icon {
-        position: absolute;
-        margin-left: 90px;
+  .brand, .name {
+    font-size: 18px;
+    margin: 20px auto 0;
+    text-align: center; /* Для центрирования */
+  }
+
+  .price__addBtn__container {
+    width: 100%;
+    height: 40px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    .price {
+      font-size: 20px;
+      width: 80px;
+    }
+
+    .addBtn {
+      width: 100px;
+      height: 40px;
+    }
+  }
+
+  .volume__changer {
+    width: 120px;
+    margin: 25px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .volume__btn {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+
+      .volume__info {
+        width: 70px;
+        border-bottom: 1px solid white;
+      }
+
+      &:hover {
+        border: 1px solid black;
       }
     }
   }
 
-  .freganse__info {
-    background-color: white;
-    border-radius: 5px;
-    width: 200px;
-    height: 430px;
-    display: flex;
-    flex-direction: column;
-
-    .freganse__item__image {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .brand {
-      font-size: 18px;
-      margin: 20px auto 0;
-    }
-
-    .name {
-      font-size: 16px;
-      margin: 20px auto 0;
-    }
-
-    .price__addBtn__container {
-      width: 100%;
-      height: 40px;
-      margin: 25px auto 0;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      .price {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        height: 100%;
-        width: 80px;
-      }
-
-      .addBtn {
-        width: 100px;
-        height: 100%;
-      }
-    }
-
-    .volume__changer {
-      width: 120px;
-      margin: 25px auto 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      .volume__btn {
-        width: 100%;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-
-        .volume__info {
-          width: 70px;
-          border-bottom: 1px solid white;
-        }
-
-        &:hover {
-          border: 1px solid black;
-        }
-      }
-    }
+  .choose__icon {
+    position: absolute;
+    margin-left: 90px;
+    transition: transform 0.3s ease;
   }
 }
 

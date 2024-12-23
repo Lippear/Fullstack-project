@@ -16,16 +16,16 @@
     width: 900px;
     background-color: rgba(0, 0, 0, 1);
     border-radius: 20px;
-    padding:20px 0 195px;
+    padding: 20px 0 0;
   }
 
   .freganses__container {
     width: 800px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     justify-content: space-around;
-    gap: 150px 50px;
+    gap: 70px 50px;
 
     .freganse__button {
       padding: 0;
@@ -70,19 +70,19 @@
           margin-top: 20px;
         }
 
-        .name{
+        .name {
           font-size: 16px;
           margin-top: 20px;
         }
 
-        .price__addBtn__container{
+        .price__addBtn__container {
           width: 100%;
           height: 40px;
           margin: auto 0;
           display: flex;
           justify-content: space-around;
           align-items: center;
-          .price{
+          .price {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,12 +91,12 @@
             width: 80px;
           }
 
-          .addBtn{
+          .addBtn {
             background-color: black;
             color: white;
             height: 100%;
             cursor: pointer;
-            &:hover{
+            &:hover {
               background-color: white;
               color: black;
               border: 1px solid black;
@@ -106,4 +106,44 @@
       }
     }
   }
+}
+
+.switch__page__number__btns__container {
+  width: 400px;
+  margin: 50px auto;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch__page__number__btn {
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    color: black;
+    background-color: rgb(105, 105, 105);
+  }
+}
+
+.active_page__number__btn{
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+}
+
+.padding__right {
+  padding-right: 20px;
+}
+
+.switch__page__text {
+  color: white;
 }

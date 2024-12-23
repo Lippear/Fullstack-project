@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Button from '/src/components/button/Button.jsx'
 import { VscSearch } from 'react-icons/vsc'
 import './Search.scss'
 import { AiOutlineFilter } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 import { useClickOutside } from '/src/components/hooks/useClickOutside'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export default function Search() {
   const [querySearchInput, setQuerySearchInput] = useState('')
@@ -14,21 +14,28 @@ export default function Search() {
   const [indexOfSelectedHint, setIndexOfSelectedHint] = useState(0)
   const inputSectionRef = useRef(null)
   const navigate = useNavigate()
+  const location = useLocation()
   const inputRef = useRef(null)
   let hintCount = searchResults.length
-  // http://localhost:5173/fragrances?search=Dior%20Sauvage
+  let isInputLineCleared = false
 
   const { t } = useTranslation()
 
   useClickOutside(inputSectionRef, () => {
     setQuerySearchInput(inputRef.current.value)
-    fetchSearchResults(inputRef.current.value, false)
     setIndexOfSelectedHint(0)
     setIsInputSectionActive(false)
   })
 
   const navigateWitchQuery = (searchQueryInput) => {
-    navigate(`/fragrances?search=${encodeURIComponent(searchQueryInput)}`)
+    if (searchQueryInput.trim()) {
+      const params = new URLSearchParams(location.search)
+      params.set('search', searchQueryInput)
+      params.set('page', 1)
+      navigate(`/fragrances?${params.toString()}`)
+    } else {
+      navigate(`/fragrances`)
+    }
   }
 
   const fetchSearchResults = (value) => {
@@ -46,9 +53,9 @@ export default function Search() {
   }
 
   const makeQuery = (searchForQuery) => {
+    inputRef.current.blur()
     setIndexOfSelectedHint(0)
     setQuerySearchInput(searchForQuery)
-    fetchSearchResults(searchForQuery)
     setIsInputSectionActive(false)
     navigateWitchQuery(searchForQuery)
   }
@@ -82,9 +89,18 @@ export default function Search() {
   const clearInputLine = () => {
     setIndexOfSelectedHint(0)
     setQuerySearchInput('')
-    fetchSearchResults('')
+    setSearchResults([])
+    isInputLineCleared = true
     inputRef.current.focus()
   }
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const search = params.get('search')
+    if (search) {
+      setQuerySearchInput(search)
+    }
+  }, [location])
 
   return (
     <section className="search__section">
@@ -100,7 +116,14 @@ export default function Search() {
             name="textInput"
             placeholder={`${t('search')}...`}
             className={`input__line ${isInputSectionActive && 'imput__section__active'}`}
-            onFocus={() => setIsInputSectionActive(true)}
+            onFocus={() => {
+              if (isInputLineCleared) {
+                isInputLineCleared = false
+              } else {
+                fetchSearchResults(querySearchInput)
+              }
+              setIsInputSectionActive(true)
+            }}
             onKeyDown={handleKeyPress}
             onInput={handleInput}
             value={indexOfSelectedHint === 0 ? querySearchInput : `${searchResults[indexOfSelectedHint - 1]}`}
@@ -132,10 +155,7 @@ export default function Search() {
                   <li key={index}>
                     <Button
                       className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`}
-                      onClick={() => {
-                        console.log(searchResult)
-                        makeQuery(searchResult)
-                      }}
+                      onClick={() => makeQuery(searchResult)}
                     >
                       {index + 1 === indexOfSelectedHint && <div className="selected__hint__line"></div>}
                       <VscSearch className="search__icon" />

@@ -1,0 +1,110 @@
+{
+  "Men": [
+    {
+      "id": "Chanel Bleu-de-Chanel",
+      "brand": "Chanel",
+      "name": "Bleu de Chanel",
+      "gender": "Men",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "50", "price": "130" },
+        { "volume": "100", "price": "175" },
+        { "volume": "150", "price": "220" }
+      ],
+      "photo": ""
+    },
+    {
+      "id": "Chanel-Allure-Homme",
+      "brand": "Chanel",
+      "name": "Allure Homme",
+      "gender": "Men",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "50", "price": "115" },
+        { "volume": "100", "price": "160" },
+        { "volume": "150", "price": "200" }
+      ],
+      "photo": ""
+    }
+  ],
+  "Women": [
+    {
+      "id": "Chanel-Chanel-No-5",
+      "brand": "Chanel",
+      "name": "Chanel No. 5",
+      "gender": "Women",
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
+        { "volume": "35", "price": "105" },
+        { "volume": "50", "price": "140" },
+        { "volume": "100", "price": "200" }
+      ],
+      "photo": ""
+    },
+    {
+      "id": "Chanel No. 5",
+      "brand": "Chanel",
+      "name": "No. 5",
+      "gender": "For her",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "50", "price": "130" },
+        { "volume": "100", "price": "180" },
+        { "volume": "200", "price": "250" }
+      ],
+      "photo": ""
+    },
+    {
+      "id": "Chanel-Coco-Mademoiselle",
+      "brand": "Chanel",
+      "name": "Coco Mademoiselle",
+      "gender": "Women",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "50", "price": "120" },
+        { "volume": "100", "price": "170" },
+        { "volume": "150", "price": "210" }
+      ],
+      "photo": ""
+    },
+    {
+      "id": "Chanel-Chance-Eau-Tendre",
+      "brand": "Chanel",
+      "name": "Chance Eau Tendre",
+      "gender": "Women",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "50", "price": "115" },
+        { "volume": "100", "price": "160" },
+        { "volume": "150", "price": "200" }
+      ],
+      "photo": ""
+    }
+  ],
+  "Unisex": [
+    {
+      "id": "Chanel Les Exclusifs de Chanel Sycomore",
+      "brand": "Chanel",
+      "name": "Les Exclusifs de Chanel Sycomore",
+      "gender": "Unisex",
+      "mainVolumeIndex": 0,
+      "volumesAndPrices": [
+        { "volume": "75", "price": "210" },
+        { "volume": "200", "price": "310" }
+      ],
+      "photo": ""
+    },
+    {
+      "id": "Chanel Les Exclusifs de Chanel Cuir de Russie",
+      "brand": "Chanel",
+      "name": "Les Exclusifs de Chanel Cuir de Russie",
+      "gender": "Unisex",
+      "mainVolumeIndex": 0,
+      "volumesAndPrices": [
+        { "volume": "75", "price": "230" },
+        { "volume": "200", "price": "330" }
+      ],
+      "photo": ""
+    }
+  ]
+}

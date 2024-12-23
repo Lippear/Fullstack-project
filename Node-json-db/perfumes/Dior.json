@@ -1,0 +1,72 @@
+{
+  "Men": [
+    {
+      "id": "Dior Sauvage",
+      "brand": "Dior",
+      "name": "Sauvage",
+      "gender": "Men",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "200", "price": "175" },
+        { "volume": "100", "price": "135" },
+        { "volume": "60", "price": "105" }
+      ],
+      "photo": "https://www.brocard.ua/media/catalog/product/1374516315/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTI1MDE0Nl8xLmpwZyJ9/dior-sauvage.webp"
+    },
+    {
+      "id": "Dior Fahrenheit",
+      "brand": "Dior",
+      "name": "Fahrenheit",
+      "gender": "Men",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "150", "price": "160" },
+        { "volume": "100", "price": "125" },
+        { "volume": "50", "price": "90" }
+      ],
+      "photo": "https://www.brocard.ua/media/catalog/product/1484997385/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMDAxMjIxOV8xLmpwZyJ9/dior-fahrenheit.webp"
+    },
+    {
+      "id": "Dior Fahrenheit Le Parfum",
+      "brand": "Dior",
+      "name": "Fahrenheit Le Parfum",
+      "gender": "Men",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "150", "price": "170" },
+        { "volume": "100", "price": "130" },
+        { "volume": "50", "price": "95" }
+      ],
+      "photo": "https://content2.rozetka.com.ua/goods/images/big/10833396.jpg"
+    }
+  ],
+  "Women": [
+    {
+      "id": "Dior J'adore",
+      "brand": "Dior",
+      "name": "J'adore",
+      "gender": "Women",
+      "mainVolumeIndex": 2,
+      "volumesAndPrices": [
+        { "volume": "100", "price": "160" },
+        { "volume": "50", "price": "120" },
+        { "volume": "30", "price": "85" }
+      ],
+      "photo": "https://www.brocard.ua/media/catalog/product/1485254cd9/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTI5NjYzMl8xLmpwZyJ9/dior-j-adore.webp"
+    },
+    {
+      "id": "Dior Miss Dior",
+      "brand": "Dior",
+      "name": "Miss Dior",
+      "gender": "Women",
+      "mainVolumeIndex": 1,
+      "volumesAndPrices": [
+        { "volume": "150", "price": "180" },
+        { "volume": "100", "price": "140" },
+        { "volume": "50", "price": "100" }
+      ],
+      "photo": "https://www.brocard.ua/media/catalog/product/1507272096/eyJ3Ijo1MDAsImgiOjUwMCwibyI6ImNhdGFsb2dcL3Byb2R1Y3RcL1wvM1wvM1wvMzM0ODkwMTQxOTM0NV8xLmpwZyJ9/dior-miss-dior.webp"
+    }
+  ],
+  "Unisex": []
+}
