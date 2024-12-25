@@ -1,4 +1,6 @@
 header {
+  position: sticky;
+  top:0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,24 +56,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 130px;
     height: 50px;
-
-    .account__button {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 150px;
-      height: 45px;
-      padding: 0 15px 0 0;
-      background-color: white;
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
-      strong {
-        width: 80px;
-        font-size: 15px;
-      }
-    }
 
     .cart {
       display: flex;
@@ -80,9 +66,10 @@ header {
       position: relative;
       width: 50px;
       height: 45px;
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
       background-color: white;
+      padding-right: 10px;
       transition: background-color 0.3s ease;
       &:hover {
         background-color: rgb(217, 217, 217);
@@ -104,11 +91,6 @@ header {
         justify-content: center;
         transition: background-color 0.3s ease;
       }
-    }
-
-    .line {
-      height: 140%;
-      border-left: 1px solid rgb(255, 255, 255);
     }
   }
 }

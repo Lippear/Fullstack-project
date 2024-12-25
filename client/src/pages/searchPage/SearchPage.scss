@@ -109,13 +109,14 @@
 }
 
 .switch__page__number__btns__container {
-  width: 400px;
   margin: 50px auto;
   height: 25px;
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 .switch__page__number__btn {

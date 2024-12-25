@@ -33,15 +33,10 @@ export default function Header() {
         </button>
       </div>
       <div className="right__menu">
+        <LanguageChanger />
         <Button className="functional__button cart" onClick={handleOpenCart}>
           <IoCartOutline className="icon" />
           {itemCountInCart > 0 && <strong className="count__added__items">{itemCountInCart > 9 ? '9+' : itemCountInCart}</strong>}
-        </Button>
-        <LanguageChanger />
-        <div className="line" />
-        <Button className="account__button">
-          <strong>{t('sign in')}</strong>
-          <VscAccount className="icon" />
         </Button>
       </div>
     </header>

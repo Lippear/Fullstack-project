@@ -13,28 +13,12 @@ export default function SearchPage() {
   const [sequenceOfPageSwitchingButtons, setSequenceOfPageSwitchingButtons] = useState([])
 
   const switchPage = (switchedPageNumber) => {
-    const duration = 500
-    const start = window.scrollY
-    const startTime = performance.now()
-
-    const scrollToTop = (currentTime) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const ease = progress * (2 - progress)
-      window.scrollTo(0, start * (1 - ease))
-
-      if (progress < 1) {
-        requestAnimationFrame(scrollToTop)
-      } else {
-        setTimeout(() => {
-          const params = new URLSearchParams(location.search)
-          params.set('page', switchedPageNumber)
-          navigate(`/fragrances?${params.toString()}`)
-        }, 100)
-      }
+    if (switchedPageNumber != pageNumber) {
+      window.scrollTo(0, 0)
+      const params = new URLSearchParams(location.search)
+      params.set('page', switchedPageNumber)
+      navigate(`/fragrances?${params.toString()}`)
     }
-
-    requestAnimationFrame(scrollToTop)
   }
 
   const makeASequenceOfPageSwitchingButtons = (countOfPages, activePage) => {
@@ -80,28 +64,27 @@ export default function SearchPage() {
     }
   }
 
-  console.log(sequenceOfPageSwitchingButtons)
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search)
-    setPageNumber(Number(searchParams.get('page')))
-    makeASequenceOfPageSwitchingButtons(26, Number(searchParams.get('page')))
-
-    fetch(`http://localhost:3500/api/fragrances?`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Search error')
-        } else {
-          return response.json()
-        }
-      })
-      .then((data) => {
-        setFreganses(data.perfumes)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }, [location])
+    useEffect(() => {
+      const searchParams = new URLSearchParams(location.search)
+      setPageNumber(searchParams.get('page') ? Number(searchParams.get('page')) : 1)
+      console.log(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
+      fetch(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Search error')
+          } else {
+            return response.json()
+          }
+        })
+        .then((data) => {
+          console.log(data)
+          setFreganses(data.fragrances)
+          makeASequenceOfPageSwitchingButtons(data.pagesCount, Number(searchParams.get('page')))
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }, [location])
 
   return (
     <>
@@ -130,7 +113,7 @@ export default function SearchPage() {
                 } else {
                   return (
                     <Button
-                      className={`${designation ===pageNumber?'active_page__number__btn':'switch__page__number__btn' } ${designation > 9 && designation < 100 && 'padding__right'}`}
+                      className={`${designation === pageNumber ? 'active_page__number__btn' : 'switch__page__number__btn'} ${designation > 9 && designation < 100 && 'padding__right'}`}
                       onClick={() => switchPage(designation)}
                       key={index}
                     >

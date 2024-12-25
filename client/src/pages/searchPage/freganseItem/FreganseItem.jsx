@@ -7,7 +7,11 @@ import { selectIsItemInCart, addItemToCart, openCart } from '../../../redux-tool
 import './FreganseItem.scss'
 
 export default function FreganseItem({ perfume }) {
-  const [choosenPerfumeIndex, setChoosenPerfumeIndex] = useState(perfume.mainVolumeIndex)
+  if (!perfume || !perfume.volumesAndPrices?.length) {
+    return <div>{t('no fragrance data available')}</div>
+  }
+
+  const [choosenPerfumeIndex, setChoosenPerfumeIndex] = useState(perfume.mainVolumeIndex || 0)
   const [isOpenChooseSection, setIsOpenChooseSection] = useState(false)
   const [isMouseEnteredOnAddBtn, setIsMouseEnteredOnAddBtn] = useState(false)
   const { t } = useTranslation()
@@ -19,23 +23,23 @@ export default function FreganseItem({ perfume }) {
 
   return (
     <div className="freganse__item">
-      <img src={perfume.photo} className="freganse__item__image" alt={perfume.name} />
-      <span className="brand">{perfume.brand}</span>
-      <span className="name">{perfume.name}</span>
-      
+      <img src={perfume.photo || '/default-image.jpg'} className="freganse__item__image" alt={perfume.name || t('no name')} />
+      <span className="brand">{perfume.brand || t('no brand')}</span>
+      <span className="name">{perfume.name || t('no name')}</span>
+
       {/* Section for volume changer */}
       <div className="volume__changer" ref={refVolumeChanger} onMouseLeave={() => setIsOpenChooseSection(false)}>
         <Button className="volume__btn items__btn" onClick={() => setIsOpenChooseSection(!isOpenChooseSection)}>
           <span className="volume__info">
-            {perfume.volumesAndPrices[choosenPerfumeIndex].volume} {t('ml')}
+            {perfume.volumesAndPrices[choosenPerfumeIndex]?.volume || t('no data')} {t('ml')}
           </span>
           {perfume.volumesAndPrices.length > 1 && <span className={`choose__icon arrow ${isOpenChooseSection ? 'rotate' : ''}`}>▼</span>}
         </Button>
-        
+
         {isOpenChooseSection && perfume.volumesAndPrices.length > 1 && (
           <div className="choose__volume__section">
             {perfume.volumesAndPrices.map((volume, index) => {
-              if (!(index === choosenPerfumeIndex)) {
+              if (index !== choosenPerfumeIndex) {
                 return (
                   <Button
                     className="volume__btn items__btn"
@@ -55,29 +59,33 @@ export default function FreganseItem({ perfume }) {
           </div>
         )}
       </div>
-
-      {/* Section for price and add to cart button */}
-      <div className="price__addBtn__container">
-        <span className="price">{perfume.volumesAndPrices[choosenPerfumeIndex].price} $</span>
-        <Button
-          className="addBtn items__btn"
-          onMouseEnter={() => setIsMouseEnteredOnAddBtn(true)}
-          onMouseLeave={() => setIsMouseEnteredOnAddBtn(false)}
-          onClick={
-            !isItemInCart
-              ? () =>
-                  dispatch(
-                    addItemToCart({
-                      item: perfume,
-                      choosenItemIndex: choosenPerfumeIndex
-                    })
-                  )
-              : () => dispatch(openCart())
-          }
-        >
-          {!isItemInCart ? t('add to cart') : isMouseEnteredOnAddBtn ? t('open cart') : t('added') + ' ✔'}
-        </Button>
-      </div>
+      {!isOpenChooseSection && (
+        <div className="price__addBtn__container">
+          <span className="price">
+            {perfume.volumesAndPrices[choosenPerfumeIndex]?.price !== undefined
+              ? `${perfume.volumesAndPrices[choosenPerfumeIndex].price} $`
+              : t('no price')}
+          </span>
+          <Button
+            className="addBtn items__btn"
+            onMouseEnter={() => setIsMouseEnteredOnAddBtn(true)}
+            onMouseLeave={() => setIsMouseEnteredOnAddBtn(false)}
+            onClick={
+              !isItemInCart
+                ? () =>
+                    dispatch(
+                      addItemToCart({
+                        item: perfume,
+                        choosenItemIndex: choosenPerfumeIndex
+                      })
+                    )
+                : () => dispatch(openCart())
+            }
+          >
+            {!isItemInCart ? t('add to cart') : isMouseEnteredOnAddBtn ? t('open cart') : t('added') + ' ✔'}
+          </Button>
+        </div>
+      )}
     </div>
   )
 }
