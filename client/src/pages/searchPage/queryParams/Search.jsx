@@ -40,7 +40,7 @@ export default function Search() {
 
   const fetchSearchResults = (value) => {
     if (value.trim()) {
-      fetch(`http://localhost:3500/api/searchQuery?search=${value}`)
+      fetch(`http://localhost:3000/api/searchQuery?search=${value}`)
         .then((response) => {
           if (!response.ok) throw new Error('Error')
           else return response.json()
