@@ -97,8 +97,8 @@ export default function SearchPage() {
               console.log(pageNumber + 1)
             }}
           >
-            {freagnses.map((perfume, index) => (
-              <FreganseItem className="fregance__button" perfume={perfume} key={index}></FreganseItem>
+            {freagnses.map((fragrance, index) => (
+              <FreganseItem className="fregance__button" fragrance={fragrance } key={index}></FreganseItem>
             ))}
           </div>
           <div className="select__pageNumber__section">

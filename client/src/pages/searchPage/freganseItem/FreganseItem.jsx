@@ -6,39 +6,39 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectIsItemInCart, addItemToCart, openCart } from '../../../redux-toolkit/cart/cartSlise'
 import './FreganseItem.scss'
 
-export default function FreganseItem({ perfume }) {
-  if (!perfume || !perfume.volumesAndPrices?.length) {
+export default function FreganseItem({fragrance }) {
+  if (!fragrance || !fragrance.volumesAndPrices?.length) {
     return <div>{t('no fragrance data available')}</div>
   }
 
-  const [choosenPerfumeIndex, setChoosenPerfumeIndex] = useState(perfume.mainVolumeIndex || 0)
+  const [choosenPerfumeIndex, setChoosenPerfumeIndex] = useState(fragrance.mainVolumeIndex)
   const [isOpenChooseSection, setIsOpenChooseSection] = useState(false)
   const [isMouseEnteredOnAddBtn, setIsMouseEnteredOnAddBtn] = useState(false)
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const refVolumeChanger = useRef(null)
-  const isItemInCart = useSelector((state) => selectIsItemInCart(state, perfume.id, choosenPerfumeIndex))
+  const isItemInCart = useSelector((state) => selectIsItemInCart(state, fragrance._id, choosenPerfumeIndex))
 
   useClickOutside(refVolumeChanger, () => setIsOpenChooseSection(false))
 
   return (
     <div className="freganse__item">
-      <img src={perfume.photo || '/default-image.jpg'} className="freganse__item__image" alt={perfume.name || t('no name')} />
-      <span className="brand">{perfume.brand || t('no brand')}</span>
-      <span className="name">{perfume.name || t('no name')}</span>
+      <img src={fragrance.photo || '/default-image.jpg'} className="freganse__item__image" alt={fragrance.name || t('no name')} />
+      <span className="brand">{fragrance.brand || t('no brand')}</span>
+      <span className="name">{fragrance.name || t('no name')}</span>
 
       {/* Section for volume changer */}
       <div className="volume__changer" ref={refVolumeChanger} onMouseLeave={() => setIsOpenChooseSection(false)}>
         <Button className="volume__btn items__btn" onClick={() => setIsOpenChooseSection(!isOpenChooseSection)}>
           <span className="volume__info">
-            {perfume.volumesAndPrices[choosenPerfumeIndex]?.volume || t('no data')} {t('ml')}
+            {fragrance.volumesAndPrices[choosenPerfumeIndex]?.volume || t('no data')} {t('ml')}
           </span>
-          {perfume.volumesAndPrices.length > 1 && <span className={`choose__icon arrow ${isOpenChooseSection ? 'rotate' : ''}`}>▼</span>}
+          {fragrance.volumesAndPrices.length > 1 && <span className={`choose__icon arrow ${isOpenChooseSection ? 'rotate' : ''}`}>▼</span>}
         </Button>
 
-        {isOpenChooseSection && perfume.volumesAndPrices.length > 1 && (
+        {isOpenChooseSection && fragrance.volumesAndPrices.length > 1 && (
           <div className="choose__volume__section">
-            {perfume.volumesAndPrices.map((volume, index) => {
+            {fragrance.volumesAndPrices.map((volume, index) => {
               if (index !== choosenPerfumeIndex) {
                 return (
                   <Button
@@ -62,8 +62,8 @@ export default function FreganseItem({ perfume }) {
       {!isOpenChooseSection && (
         <div className="price__addBtn__container">
           <span className="price">
-            {perfume.volumesAndPrices[choosenPerfumeIndex]?.price !== undefined
-              ? `${perfume.volumesAndPrices[choosenPerfumeIndex].price} $`
+            {fragrance.volumesAndPrices[choosenPerfumeIndex]?.price !== undefined
+              ? `${fragrance.volumesAndPrices[choosenPerfumeIndex].price} $`
               : t('no price')}
           </span>
           <Button
@@ -75,7 +75,7 @@ export default function FreganseItem({ perfume }) {
                 ? () =>
                     dispatch(
                       addItemToCart({
-                        item: perfume,
+                        item: fragrance,
                         choosenItemIndex: choosenPerfumeIndex
                       })
                     )

@@ -40,7 +40,7 @@ export default function Search() {
 
   const fetchSearchResults = (value) => {
     if (value.trim()) {
-      fetch(`http://localhost:3000/api/searchQuery?search=${value}`)
+      fetch(`http://localhost:3500/api/searchQuery?search=${value.trim()}`)
         .then((response) => {
           if (!response.ok) throw new Error('Error')
           else return response.json()
@@ -55,9 +55,9 @@ export default function Search() {
   const makeQuery = (searchForQuery) => {
     inputRef.current.blur()
     setIndexOfSelectedHint(0)
-    setQuerySearchInput(searchForQuery)
+    setQuerySearchInput(searchForQuery.trim())
     setIsInputSectionActive(false)
-    navigateWitchQuery(searchForQuery)
+    navigateWitchQuery(searchForQuery.trim())
   }
 
   const handleKeyPress = (event) => {

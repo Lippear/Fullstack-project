@@ -17,11 +17,11 @@ const cartSlice = createSlice({
     },
     addItemToCart: (state, action) => {
       const { item, choosenItemIndex } = action.payload
-      const { id, brand, name, photo, volumesAndPrices } = item
-      const product = state.items[id]
+      const { _id, brand, name, photo, volumesAndPrices } = item
+      const product = state.items[_id]
 
       if (!product) {
-        state.items[id] = {
+        state.items[_id] = {
           brand,
           name,
           photo,
@@ -41,21 +41,21 @@ const cartSlice = createSlice({
       }
     },
     removeItemFromCart: (state, action) => {
-      const { id, volumeIndex } = action.payload
+      const { _id, volumeIndex } = action.payload
 
-      const product = state.items[id]
+      const product = state.items[_id]
       if (product && product.addedVolumes[volumeIndex]) {
         delete product.addedVolumes[volumeIndex]
         if (Object.keys(product.addedVolumes).length === 0) {
-          delete state.items[id]
+          delete state.items[_id]
         }
       } else {
-        console.error('Продукт или объём не найден!')
+        console.error('Продукт или объём не найден!', _id, volumeIndex)
       }
     },
     setItemCount: (state, action) => {
-      const { id, volumeIndex, selectedCount } = action.payload
-      const product = state.items[id]
+      const { _id, volumeIndex, selectedCount } = action.payload
+      const product = state.items[_id]
       console.log(typeof(selectedCount))
       if (product && product.addedVolumes[volumeIndex]) {
         product.addedVolumes[volumeIndex] = {
@@ -69,8 +69,8 @@ const cartSlice = createSlice({
   }
 })
 
-export const selectIsItemInCart = (state, id, volumeIndex) => {
-  const product = state.cart.items[id]
+export const selectIsItemInCart = (state, _id, volumeIndex) => {
+  const product = state.cart.items[_id]
   return product && product.addedVolumes && product.addedVolumes[volumeIndex] ? true : false
 }
 

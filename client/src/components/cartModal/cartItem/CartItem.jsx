@@ -37,7 +37,7 @@ export default function CartItem({ item, itemId, volumeId }) {
     }
     if (/^(-?[1-9]\d*|0)?$/.test(inputValue)) {
       if (!(inputValue === '')) {
-        dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: parseInt(inputValue) }))
+        dispatch(setItemCount({ _id: itemId, volumeIndex: volumeId, selectedCount: parseInt(inputValue) }))
       }
       setValue(inputValue)
     }
@@ -45,7 +45,7 @@ export default function CartItem({ item, itemId, volumeId }) {
 
   const handleBlur = () => {
     if (value === '') {
-      dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: 1 }))
+      dispatch(setItemCount({ _id: itemId, volumeIndex: volumeId, selectedCount: 1 }))
       setValue('1')
     }
   }
@@ -60,7 +60,7 @@ export default function CartItem({ item, itemId, volumeId }) {
     newValue += 1
 
     setValue(newValue.toString())
-    dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
+    dispatch(setItemCount({ _id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
   }
 
   const removeItemClick = () => {
@@ -68,14 +68,14 @@ export default function CartItem({ item, itemId, volumeId }) {
     if (newValue > 1) {
       newValue -= 1
       setValue(newValue.toString())
-      dispatch(setItemCount({ id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
+      dispatch(setItemCount({ _id: itemId, volumeIndex: volumeId, selectedCount: newValue }))
     } else {
       setValue('1')
     }
   }
 
   const removeItem = () => {
-    dispatch(removeItemFromCart({ id: itemId, volumeIndex: volumeId }))
+    dispatch(removeItemFromCart({ _id: itemId, volumeIndex: volumeId }))
   }
   return (
     <div className="cart__item">
