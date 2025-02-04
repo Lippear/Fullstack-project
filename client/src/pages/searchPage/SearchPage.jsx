@@ -64,68 +64,73 @@ export default function SearchPage() {
     }
   }
 
-    useEffect(() => {
-      const searchParams = new URLSearchParams(location.search)
-      setPageNumber(searchParams.get('page') ? Number(searchParams.get('page')) : 1)
-      console.log(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
-      fetch(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Search error')
-          } else {
-            return response.json()
-          }
-        })
-        .then((data) => {
-          console.log(data)
-          setFreganses(data.fragrances)
-          makeASequenceOfPageSwitchingButtons(data.pagesCount, Number(searchParams.get('page')))
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    }, [location])
+  const updatedCode = () => {
+    // новый код здесь
+  }
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search)
+    setPageNumber(searchParams.get('page') ? Number(searchParams.get('page')) : 1)
+    console.log(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
+    fetch(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Search error')
+        } else {
+          return response.json()
+        }
+      })
+      .then((data) => {
+        console.log(data)
+        setFreganses(data.fragrances)
+        makeASequenceOfPageSwitchingButtons(data.pagesCount, Number(searchParams.get('page')))
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }, [location])
 
   return (
-    <>
-      <div className="search__page">
-        <div className="product__page">
-          <Search />
-          <div
-            className="freganses__container"
-            onClick={() => {
-              console.log(pageNumber + 1)
-            }}
-          >
-            {freagnses.map((fragrance, index) => (
-              <FreganseItem className="fregance__button" fragrance={fragrance } key={index}></FreganseItem>
-            ))}
+    <main className="search__page">
+      <article className="product__page">
+        <Search />
+        <section
+          className="freganses__container"
+          onClick={() => {
+            console.log(pageNumber + 1)
+          }}
+        >
+          {freagnses.map((fragrance, index) => (
+            <FreganseItem className="fregance__button" fragrance={fragrance} key={index} />
+          ))}
+        </section>
+        <nav className="select__pageNumber__section" aria-label="Pagination">
+          <div className="switch__page__number__btns__container">
+            {sequenceOfPageSwitchingButtons.map((designation, index) => {
+              if (designation === '...') {
+                return (
+                  <span className="switch__page__text" key={index}>
+                    ...
+                  </span>
+                )
+              } else {
+                return (
+                  <Button
+                    className={`${
+                      designation === pageNumber ? 'active_page__number__btn' : 'switch__page__number__btn'
+                    } ${designation > 9 && designation < 100 && 'padding__right'}`}
+                    onClick={() => switchPage(designation)}
+                    key={index}
+                    aria-current={designation === pageNumber ? 'page' : undefined}
+                  >
+                    {designation}
+                  </Button>
+                )
+              }
+            })}
           </div>
-          <div className="select__pageNumber__section">
-            <div className="switch__page__number__btns__container">
-              {sequenceOfPageSwitchingButtons.map((designation, index) => {
-                if (designation === '...') {
-                  return (
-                    <span className="switch__page__text" key={index}>
-                      ...
-                    </span>
-                  )
-                } else {
-                  return (
-                    <Button
-                      className={`${designation === pageNumber ? 'active_page__number__btn' : 'switch__page__number__btn'} ${designation > 9 && designation < 100 && 'padding__right'}`}
-                      onClick={() => switchPage(designation)}
-                      key={index}
-                    >
-                      {designation}
-                    </Button>
-                  )
-                }
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+        </nav>
+      </article>
+    </main>
   )
 }

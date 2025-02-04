@@ -150,20 +150,15 @@ export default function Search() {
                   </p>
                 </li>
               )}
-              {searchResults.map((searchResult, index) => {
-                return (
-                  <li key={index}>
-                    <Button
-                      className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`}
-                      onClick={() => makeQuery(searchResult)}
-                    >
-                      {index + 1 === indexOfSelectedHint && <div className="selected__hint__line"></div>}
-                      <VscSearch className="search__icon" />
-                      <span>{searchResult}</span>
-                    </Button>
-                  </li>
-                )
-              })}
+              {searchResults.map((searchResult, index) => (
+                <li key={index}>
+                  <Button className={`hint__button ${index + 1 === indexOfSelectedHint && 'selected__hint'}`} onClick={() => makeQuery(searchResult)}>
+                    {index + 1 === indexOfSelectedHint && <div className="selected__hint__line"></div>}
+                    <VscSearch className="search__icon" />
+                    <span>{searchResult}</span>
+                  </Button>
+                </li>
+              ))}
             </ul>
           )}
         </div>
