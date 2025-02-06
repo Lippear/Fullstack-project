@@ -35,7 +35,8 @@ mongoose
 
 app.get("/api/fragrances", async (req, res) => {
   try {
-    const { brand, gender, search, page = 1 } = req.query;
+    const { brands, genders, search, page = 1 } = req.query;
+    const DBfilter = { $and: [] };
     const fragranceLimitOnPage = 3;
     const searchWords = search
       ? search
@@ -44,10 +45,19 @@ app.get("/api/fragrances", async (req, res) => {
           .map((word) => new RegExp(word, "i"))
       : [];
     const countToSkip = (page - 1) * fragranceLimitOnPage;
-    const DBfilter = { $and: [] };
 
-    if (brand) DBfilter.$and.push({ brand: new RegExp(brand, "i") });
-    if (gender) DBfilter.$and.push({ gender: gender });
+    if (brands) {
+      const parsedBrands = brands.split(",");
+      DBfilter.$and.push({
+        brand: { $in: parsedBrands.map((brand) => new RegExp(brand, "i")) },
+      });
+    }
+    if (genders) {
+      const parsedGenders = genders.split(",");
+      DBfilter.$and.push({
+        gender: { $in: parsedGenders.map((gender) => new RegExp(gender, "i")) },
+      });
+    }
     if (searchWords.length > 0) {
       DBfilter.$and.push({
         $and: searchWords.map((word) => ({
@@ -65,6 +75,16 @@ app.get("/api/fragrances", async (req, res) => {
     res.json({ fragrances, pagesCount });
   } catch (error) {
     res.status(500).json({ error: "Search failed", details: error.message });
+  }
+});
+
+app.get("/api/filter", async (req, res) => {
+  try {
+    const brands = await Fragrance.distinct("brand");
+    const genders = await Fragrance.distinct("gender");
+    res.json({ brands, genders });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 

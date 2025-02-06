@@ -64,12 +64,9 @@ export default function SearchPage() {
     }
   }
 
-  const updatedCode = () => {
-    // новый код здесь
-  }
-
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search)
+    console.log(searchParams.toString())
     setPageNumber(searchParams.get('page') ? Number(searchParams.get('page')) : 1)
     console.log(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
     fetch(`http://localhost:3500/api/fragrances?${searchParams.toString()}`)
@@ -96,9 +93,6 @@ export default function SearchPage() {
         <Search />
         <section
           className="freganses__container"
-          onClick={() => {
-            console.log(pageNumber + 1)
-          }}
         >
           {freagnses.map((fragrance, index) => (
             <FreganseItem className="fregance__button" fragrance={fragrance} key={index} />

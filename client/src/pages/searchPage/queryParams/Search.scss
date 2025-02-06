@@ -10,24 +10,6 @@
     max-width: 800px;
     margin: 0 auto;
     
-    .filter {
-      width: 40px;
-      height: 40px;
-      padding: 8px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      border: 1px solid var(--border-color);
-      flex-shrink: 0;
-      
-      .filter__icon {
-        width: 20px;
-        height: 20px;
-      }
-    }
-    
     .input__section {
       position: relative;
       flex-grow: 1;

@@ -56,7 +56,6 @@ const cartSlice = createSlice({
     setItemCount: (state, action) => {
       const { _id, volumeIndex, selectedCount } = action.payload
       const product = state.items[_id]
-      console.log(typeof(selectedCount))
       if (product && product.addedVolumes[volumeIndex]) {
         product.addedVolumes[volumeIndex] = {
           count: selectedCount

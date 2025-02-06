@@ -55,7 +55,7 @@ export default function CartModal() {
           <div className="item__page">
             <div className="item__editor">
               <div className="modal__container">
-                {Object.keys(cartItems).length === 0 && <div className="empty__cart__info"><h2>Cart is empty</h2><Button className='special__page__btn to__shopping__btn' onClick={closeCartModal}>TO SHOPPING</Button></div>}
+                {Object.keys(cartItems).length === 0 && <div className="empty__cart__info"><h2>{t('Cart is empty')}</h2><Button className='special__page__btn to__shopping__btn' onClick={closeCartModal}>{t('TO SHOPPING')}</Button></div>}
                 {Object.keys(cartItems).map((itemId) => {
                   const item = cartItems[itemId]
                   return Object.keys(item.addedVolumes).map((volumeId) => {

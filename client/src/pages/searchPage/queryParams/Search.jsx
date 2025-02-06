@@ -2,10 +2,10 @@ import { useState, useRef, useEffect } from 'react'
 import Button from '/src/components/button/Button.jsx'
 import { VscSearch } from 'react-icons/vsc'
 import './Search.scss'
-import { AiOutlineFilter } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 import { useClickOutside } from '/src/components/hooks/useClickOutside'
 import { useNavigate, useLocation } from 'react-router-dom'
+import Filter from './filter/Filter'
 
 export default function Search() {
   const [querySearchInput, setQuerySearchInput] = useState('')
@@ -45,9 +45,7 @@ export default function Search() {
           if (!response.ok) throw new Error('Error')
           else return response.json()
         })
-        .then((data) => {
-          setSearchResults(data.searchResults)
-        })
+        .then((data) => value.trim() === inputRef.current.value.trim() && setSearchResults(data.searchResults))
         .catch((error) => console.error(error))
     } else setSearchResults([])
   }
@@ -105,9 +103,7 @@ export default function Search() {
   return (
     <section className="search__section">
       <div className="search__container">
-        <Button className="filter">
-          <AiOutlineFilter className="filter__icon" />
-        </Button>
+        <Filter />
         <div className="input__section" ref={inputSectionRef}>
           <VscSearch className="search__icon" />
           <input
