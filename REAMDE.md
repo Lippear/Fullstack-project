@@ -16,6 +16,7 @@
 - SCSS
 - Redux Toolkit
 - React Router
+- i18n
 - MongoDB
 
 
