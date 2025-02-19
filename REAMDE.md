@@ -25,10 +25,10 @@
 - 2. cd Fullstack-project 
 - 3. cd client
 - 4. yarn install
-- 5. yarn dev
-- 6. cd ../Mongo-Node-db
-- 7. npm install
-- 8. node server.js 
+- 5. cd ../Mongo-Node-db
+- 6. npm install
+- 7. IN client terminal - "yarn dev"
+- 8.  IN Mongo-Node-db terminal - "node server.js" 
 
 ![1](./screenshots/screen6.png)
 ![2](./screenshots/screen1.png)
